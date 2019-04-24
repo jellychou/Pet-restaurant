@@ -23,6 +23,7 @@ let show_of_page = 5;
 let number_of_items = 0;
 let number_of_pages = 0;
 let textNode;
+let pagination = document.querySelector('.pagination');
 textNode = '';
 
 
@@ -103,6 +104,7 @@ $(document).ready(function () {
         }
 
         $('.btn-radius').on('click', function (e) {
+            pagination.innerHTML = '';
             if (e.target.id !== 'all') {
                 $('#all').removeClass('active');
             } else {
@@ -129,8 +131,7 @@ $(document).ready(function () {
                     infoCardshow.push($('.infoCard')[index]);
                 }
             });
-            // list.innerHTML = '';
-            
+            listCount();
         });
 
         // $('.total').on('click',function (e) {
@@ -161,7 +162,6 @@ $(document).ready(function () {
         // });
 
         $('.areaClick').on('click', function (e) {
-            listCount();
             let el = e.target.textContent;
             console.log(el);
             list.innerHTML = '';
@@ -190,8 +190,11 @@ $(document).ready(function () {
                     </div>`;
                 }
             }
-            let childList = list.childElementCount;
-
+            infoCardshow = [];
+            $('.infoCard').each(function() {
+                infoCardshow.push(this);
+            })
+            listCount();
         });
 
 
@@ -220,7 +223,7 @@ $(document).ready(function () {
                 </div>`;
         };
 
-        $('.infoCard').each(function() {
+        $('.infoCard').each(function () {
             infoCardshow.push(this);
         });
 
@@ -373,16 +376,15 @@ function arrInArr(ary, target) {
 }
 
 function listCount() {
-     //pagination 
-     number_of_items = list.childElementCount;
-     number_of_pages = Math.ceil(number_of_items / show_of_page);
-
-     for (let i = 1; i < number_of_pages + 1; i++) {
-         textNode += `
-     <li class="page-item page-num" onclick="changePage(${i - 1})">
-         <a class="page-link" href="#">${i}</a>
-     </li>`;
-         document.querySelector('.pagination').innerHTML = `
+    number_of_items = infoCardshow.length;
+    number_of_pages = Math.ceil(number_of_items / show_of_page);
+    textNode = '';
+    for (let i = 1; i < number_of_pages + 1; i++) {
+        textNode += `
+        <li class="page-item page-num" onclick="changePage(${i - 1})">
+        <a class="page-link" href="#">${i}</a>
+        </li>`;
+        pagination.innerHTML = `
      <li class="page-item">
          <a class="page-link" href="#" aria-label="Previous">
              <span aria-hidden="true">&laquo;</span>
@@ -394,7 +396,8 @@ function listCount() {
              <span aria-hidden="true">&raquo;</span>
          </a>
      </li> `;
-     }
-     console.log(document.querySelectorAll('.page-num')[0].classList);
-     document.querySelectorAll('.page-num')[0].classList.add('active');
+    }
+    // // pagination.innerHTML = ''; 
+    // console.log(document.querySelectorAll('.page-num')[0].classList);
+    // document.querySelectorAll('.page-num')[0].classList.add('active');
 }
