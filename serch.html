@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheet/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Pet resturant -- 查詢</title>
+</head>
+<style>
+    /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <a class="navbar-brand d-flex" href="index.html">
+                <img src="/images/head.png" width="80" height="80" class="d-inline-block align-top mt-md-3" alt="">
+                <div class="flex-direction-column">
+                    <h5 class="mt-md-2 ml-md-2 mt-2 ml-2 text-dark h1" style="height: 45px">TanTan
+                    </h5>
+                    <span class="ml-md-2 text-dark">Pet Restaurant<i class="fas fa-paw ml-md-2"></i></span>
+                </div>
+            </a>
+            <button class="navbar-toggler d-md-none ml-auto" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex ml-auto">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mr-md-2">
+                            <a class="nav-link h5 text-dark" href="index.html">首頁</a>
+                        </li>
+                        <li class="nav-item mr-md-2 active">
+                            <a class="nav-link h5 text-info" href="serch.html">查詢<span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5 text-secondary" href="remind.html">貼心提醒<i
+                                    class="fas fa-heart"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleCaptions" class="carousel slide serch-list" data-ride="carousel">
+            <div class="carousel-btn">
+                <a href="#point">
+                    <button class="btn btn-primary text-white point-btn btn-style a-style mr-md-8">關鍵字<br>搜尋</button>
+                </a>
+                <a href="#map">
+                    <button class="btn btn-primary text-white map-btn btn-style a-style ml-md-8">地圖式<br>搜尋</button>
+                </a>
+            </div>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active carousel-header bg-cover"
+                    style="background-image: url('https://images.unsplash.com/photo-1515952782260-36998d667f89?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item carousel-header bg-cover"
+                    style="background-image: url('https://images.unsplash.com/photo-1494913148647-353ae514b35e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
+                </div>
+                <div class="carousel-item carousel-header bg-cover"
+                    style="background-image: url('https://images.unsplash.com/photo-1550256051-e8b328f5bf54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80')">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="dispoint point">
+            <div class="row">
+                <div class="col-md-3 mt-md-5">
+                    <div class="list-group">
+                        <div href="#" class="list-group-item list-group-item-action bg-primary border-0 text-white h5"
+                            id="point">
+                            <i class="fas fa-globe-asia mr-md-3"></i>
+                            地區分類
+                        </div>
+                        <a href="#north" class="list-group-item list-group-item-action areaClick"><i
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>北部 <span id="northCount"
+                                id="#north"></span></a>
+                        <a href="#middle" class="list-group-item list-group-item-action areaClick"><i
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>中部 <span id="middleCount"
+                                id="#middle"></span></a>
+                        <a href="#south" class="list-group-item list-group-item-action areaClick"><i
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>南部 <span id="southCount"
+                                id="#south"></span></a>
+                        <a href="#east" class="list-group-item list-group-item-action areaClick"><i
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>東部 <span id="eastCount"
+                                id="#east"></span></a>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="mt-md-5">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control point-serch" placeholder="關鍵字搜尋"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary text-white serch-btn">GO</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 btn-dec my-md-2">
+                            <a id="all" class="btn-radius active">全部類型</a>
+                            <a class="btn-radius" data-num="1">寵物餐廳</a>
+                            <a class="btn-radius" data-num="2">寵物友善餐廳</a>
+                            <a class="btn-radius" data-num="3">寵物樂園</a>
+                            <a class="btn-radius" data-num="4">寵物美容</a>
+                            <a class="btn-radius" data-num="5">寵物安親</a>
+                            <a class="btn-radius" data-num="6">浪浪中途</a>
+                            <a class="btn-radius" data-num="7">寵物雜貨</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <!-- <div class="mt-md-3 border-style">
+                            <div class="bg-warning">
+                                <div class="row"> -->
+                        <!-- <div class="col-md-3 no-gutter"> -->
+                        <!-- <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                                            class="w-100 h-100"> -->
+                        <!-- </div> -->
+                        <!-- <div class="col-md-9 my-md-2">
+                                        <h4>貳樓寵物餐廳</h4>
+                                        <p class="mb-md-1"><i
+                                                class="fas fa-phone-square text-secondary mr-md-3"></i>05-597525</p>
+                                        <p class="mb-md-1"><i
+                                                class="fas fa-map-marker-alt text-secondary mr-md-3"></i>台北市南港區忠孝東路六段448號4
+                                        </p>
+                                        <p class="mb-md-1"><i
+                                                class="fas fa-clock text-secondary mr-md-3"></i>AM9:00-PM10:00
+                                        </p>
+                                        <p class="mb-md-1"><i
+                                                class="fas fa-paw text-secondary mr-md-3"></i>寵物餐廳/寵物友善餐廳/寵物餐/寵物安親/寵物美容/浪浪中途/寵物雜貨
+                                        </p>
+                                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dismap map">
+            <div class="row mt-md-7">
+                <div class="col-md-5 map-list">
+                    <!-- <div class="card">
+                            <img src="https://images.unsplash.com/photo-1550256051-e8b328f5bf54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title">貳樓寵物友善餐廳</h4>
+                                <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>05-5975252
+                                </p>
+                                <p class="card-text"><i
+                                        class="fas fa-map-marker-alt text-secondary mr-md-3"></i>台北市南港區忠孝東路六448號</p>
+                                <p class="card-text"><i class="fas fa-clock text-secondary mr-md-3"></i>10:00-21:00</p>
+                                <p class="card-text"><i
+                                        class="fas fa-paw text-secondary mr-md-3"></i>寵物餐廳/寵物友善餐廳/寵物餐/寵物安親/寵物美容/浪浪中途/寵物雜貨
+                                </p>
+                            </div>
+                        </div> -->
+                </div>
+                <div class="col-md-7" style="height:576px">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dispage">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center mt-md-6">
+                <!-- <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li> -->
+            </ul>
+        </nav>
+    </div>
+    <div class="footer mt-md-8">
+        <div class="bg-success text-center text-warning py-md-3">
+            <p class="mb-md-0 pb-md-1"><span class="year">&copy;</span>寵物友善餐廳查詢</p>
+            <p class="mb-md-0">Made by Jelly</p>
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="js/all.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABC2LrjCQkCGgKfrvRey2zfj5nD4BGjuE&callback=initMap"
+        async defer></script>
+
+
+
+</body>
+
+</html>

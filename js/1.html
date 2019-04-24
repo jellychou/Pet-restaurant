@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>Content 1</p>
+        <p>Content 2</p>
+        <p>Content 3</p>
+        <p>Content 4</p>
+        <p>Content 5</p>
+        <p>Content 6</p>
+        <p>Content 7</p>
+        <p>Content 8</p>
+        <p>Content 9</p>
+        <p>Content 10</p>
+        <p>Content 11</p>
+        <p>Content 12</p>
+        <p>Content 13</p>
+        <p>Content 14</p>
+        <p>Content 15</p>
+        <p>Content 16</p>
+        <p>Content 17</p>
+        <p>Content 18</p>
+        <p>Content 19</p>
+        <p>Content 20</p>
+        <p>Content 21</p>
+        <p>Content 22</p>
+        <p>Content 23</p>
+        <p>Content 24</p>
+        <p>Content 25</p>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        </ul>
+    </nav>
+</body>
+<script>
+// 每一個分頁要顯示的數量
+var show_per_page = 5;
+
+// 選取出 .container 這個 div 下有多少個 p
+var number_of_items = document.querySelector('.container').childElementCount;
+
+// 用『總數量』除以『每一頁分頁要顯示的數量』= 要有多少頁
+var number_of_pages = Math.ceil(number_of_items/show_per_page);
+
+var textnode;
+textnode = '';
+// 頁數顯示：算出 number_of_pages 後就可以新增下方的分頁數列
+for(var i = 1;i < number_of_pages+1; i++){
+  textnode += `
+<li class="page-item page-num" onclick="changePage(${i - 1})"><a class="page-link" href="#">${i}</a></li>
+`;
+  document.querySelector('.pagination').innerHTML = 
+    `<li class="page-item">
+<a class="page-link" href="#" aria-label="Previous" onclick="preOrNext('pre')">
+<span aria-hidden="true">&laquo;</span>
+</a>
+</li>${textnode}
+<li class="page-item">
+<a class="page-link" href="#" aria-label="Next" onclick="preOrNext('next')">
+<span aria-hidden="true">&raquo;</span>
+</a>
+</li>`;
+}
+console.log(document.querySelectorAll('.page-num')[0].classList);
+document.querySelectorAll('.page-num')[0].classList.add('active');
+
+// 首次內容顯示
+var arr = [];
+for(var i = 0;i < number_of_items; i++){
+  // 先將 .container 中的所有內容都 display: none
+  document.querySelector('.container').children[i].style.display = 'none';
+  // 將每一筆內容都依序推入 arr 這個陣列
+  arr.push(document.querySelector('.container').children[i]);
+}
+// 首次顯示會顯示前五筆，所以是用 slice 方法來切出 arr 的前五筆來 display: block
+for(var i = 0;i < show_per_page; i++){
+  arr.slice(0, show_per_page)[i].style.display = 'block';
+}
+
+// 切換頁數
+function changePage(page_num) {
+  // active 切換
+  for(var i = 0;i < number_of_pages; i++){
+    document.querySelectorAll('.page-num')[i].classList.remove('active');
+  }
+  document.querySelectorAll('.page-num')[page_num].classList.add('active');
+  // 開始選取的陣列位置：用頁碼乘以每頁顯示數量
+  var start_from = page_num * show_per_page;
+  // 結束選取的陣列位置：用開始選取的陣列位置加上每頁顯示數量
+  var end_on = start_from + show_per_page;
+  // 先把 .container 下所有內容都 display: none
+  for(var i = 0;i < number_of_items; i++){
+    document.querySelector('.container').children[i].style.display = 'none';
+  }
+  // 再用 slice 去切出陣列中 (開始選取的陣列位置, 結束選取的陣列位置) 這兩個位置間的資料來 display: block
+  for(var i = 0;i < show_per_page; i++){
+    arr.slice(start_from, end_on)[i].style.display = 'block';
+  }
+}
+
+function preOrNext(go) {
+  for(var i = 0;i < number_of_pages; i++){
+    if(document.querySelectorAll('.page-num')[i].classList.contains('active')){
+      var activePage = document.querySelectorAll('.page-num')[i]
+      }
+  }
+  var now  = parseInt(activePage.children[0].textContent) - 1
+  if (go == 'pre' && now > 0) {
+    changePage(now -1)
+  } else if (go == 'next' && now < number_of_pages - 1) {
+    changePage(now + 1)
+  }
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,65 @@
+.serch-list {
+    position: relative;
+    .carousel-header {
+        height: 500px;
+        z-index: 0;
+    }
+    .carousel-btn {
+        position: absolute;
+        z-index: 1;
+        left: 315px;
+        top: 100px;
+        .btn-style {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            opacity: 0.8;
+            &:hover {
+                border: 3px solid #fff;
+                opacity: 1;
+            }
+        }
+        .a-style {
+            font-size: 25px;
+            text-decoration: none;
+        }
+    }
+}
+.btn-dec a {
+    text-decoration: none;
+}
+.btn-radius {
+    display: inline-block;
+    border-radius: 50px;
+    color: gray;
+    border: 2px solid $success;
+    padding: 8px;
+    margin-right: 2px;
+    &:hover {
+        color: gray;
+        background-color: $primary-200;
+        cursor: pointer;
+    }
+    &.active {
+        color: #fff;
+        background-color: $primary;
+        border: 2px solid $primary;
+    }
+}
+
+.btn-all{
+    color: #fff;
+    background-color: $primary;
+}
+
+.border-style {
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+}
+.dispoint , .dismap , .dispage{
+    display: none;
+}
+
+.disblock {
+    display: block;
+}

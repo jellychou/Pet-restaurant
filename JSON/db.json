@@ -1,0 +1,1033 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "Type": "Pet",
+      "properties": {
+        "Name": "浪浪別哭",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/浪浪中途",
+        "Add": "台北市中正區林森北路9巷13號",
+        "Time": "12:00-21:00",
+        "Tel": "02-23560766",
+        "Category": [1,6],
+        "Images": "https://lh6.googleusercontent.com/proxy/3-T2KDNnkdMhx494bmBrhGcTzFvsxjPyJrmirwiQ34QVvQacEchXWpVcsBz01WakJXcdLIatLgRSn3U7XUFmH0qRLNgms47ytbqiljdtEhY"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5200462,
+          25.0485706
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "Type": "Pet",
+      "properties": {
+        "Name": "萌萌食堂",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市中山區民權東路一段12巷15號",
+        "Time": "11:00-21:00",
+        "Tel": "0909-599611",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/42702421_750960005250679_2754822590936645632_o.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=18fc7673c1291ad2ced0b74c89207d40&oe=5D342A00"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5774188,
+          25.0397253
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "Type": "Pet",
+      "properties": {
+        "Name": "四目咖啡寵物美學",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物美容/寵物安親/寵物雜貨",
+        "Add": "台北市中山區民權東路一段12巷15號",
+        "Time": "12:00-21:00",
+        "Tel": "0909-599611",
+        "Category": [1,4,5,7],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/947000_447921682079411_7180002767441092846_n.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=eaadf450d10142879b30a881607dd5c4&oe=5D460C83"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5622395,
+          25.0527221
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "Type": "Pet",
+      "properties": {
+        "Name": "小春日和",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物雜貨",
+        "Add": "台北市松山區延壽街361號",
+        "Time": "11:00-21:00",
+        "Tel": "02-87876920",
+        "Category": [1,7],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/267652_227908493907433_7676042_n.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=aa851159c877dd9058b9c40f42ea432a&oe=5D737784"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5587874,
+          25.0566294
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "Type": "Pet",
+      "properties": {
+        "Name": "Piglet friendly cafe 彼克蕾友善咖啡館",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物雜貨",
+        "Add": "台北市大安區新生南路三段76巷5號",
+        "Time": "11:30-21:30",
+        "Tel": "02-33653155",
+        "Category": [1,7],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/15326302_710403405784485_695113479204428491_o.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=c7572dafa999496b993933ed1c365f3e&oe=5D458287"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5334161,
+          25.0190945
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "Type": "Pet",
+      "properties": {
+        "Name": "Zoo CAFE",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "台北市大安區仁愛路四段345巷5弄15號",
+        "Time": "11:00-19:30",
+        "Tel": "02-27219322",
+        "Category": [1],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/13501638_1011712502215530_7377500318041843425_n.jpg?_nc_cat=110&_nc_ht=scontent.ftpe4-2.fna&oh=0d996ab9cf11c16605b130a14209bf47&oe=5D3D090F"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5546796,
+          25.0385857
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "Type": "Pet",
+      "properties": {
+        "Name": "兜味 Doorway cafe",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "台北市大同區安西街36號",
+        "Time": "13:30-19:00 星期二休息",
+        "Tel": "02-27219322",
+        "Category": [1],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/49726483_2055076591212469_493111242567712768_o.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=0c4b5e5150899d4ef6af171ed412e99a&oe=5D38A20D"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.510053,
+          25.059313
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "Type": "Pet",
+      "properties": {
+        "Name": "歪頭廚房",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "新北市中和區自立路2巷7號",
+        "Time": "11:30-14:00 17:30-14:00 星期二休息",
+        "Tel": "02-86682477",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/15073441_819238674882662_1684375569919112839_n.jpg?_nc_cat=103&_nc_ht=scontent.ftpe3-2.fna&oh=59b8d3392d17c432a6aa8bee100b6ef8&oe=5D6FE9A7"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.511036,
+          25.010793
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "Type": "Pet",
+      "properties": {
+        "Name": "堤柇 寵物住宿 人文咖啡",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物安親",
+        "Add": "新北市板橋區文聖街194號",
+        "Time": "12:00-21:00 星期一二三休息",
+        "Tel": "02-22501377",
+        "Category": [1,5],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/13912608_644133965743426_4108365801335259039_n.jpg?_nc_cat=100&_nc_ht=scontent.ftpe3-1.fna&oh=7ab5eb266bc116f6a3b45161a082f8c8&oe=5D37987A"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.47966,
+          25.02661
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "Type": "Pet",
+      "properties": {
+        "Name": "愛狗夢樂園",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物樂園",
+        "Add": "新北市汐止區汐萬路三段295號",
+        "Time": "09:00-17:00 星期一二休息",
+        "Tel": "02-26463438",
+        "Category": [1,3],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/23843299_1670671422976582_7529821430016605955_n.jpg?_nc_cat=110&_nc_ht=scontent.ftpe4-2.fna&oh=fdb0cb7352c7cc1214436b5fec41f883&oe=5D329412"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.6282429,
+          25.1146828
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "Type": "Pet",
+      "properties": {
+        "Name": "Cafe食堂KenKen",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "桃園市龍潭區高原路805號",
+        "Time": "星期四五 11:30-16:00 星期六日 11:30-19:00 星期一二三休息",
+        "Tel": "03-4112859",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/56340183_2595325443828275_3758385027277127680_n.jpg?_nc_cat=109&_nc_ht=scontent.ftpe3-2.fna&oh=3e79e6d80b1e875c336f95bc4638cbbb&oe=5D4674C7"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.2397455,
+          24.8253003
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "Type": "Pet",
+      "properties": {
+        "Name": "林可可家的牧場",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物樂園",
+        "Add": "桃園市龍潭區十一份路196號",
+        "Time": "平日 11:00-19:00 假日 10:30-20:00",
+        "Tel": "03-4711508",
+        "Category": [1,3],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/50072470_2307915199437758_1308435102094589952_o.jpg?_nc_cat=103&_nc_ht=scontent.ftpe3-2.fna&oh=3059f445cf6dce94b572423e0b78d6f1&oe=5D2ED71A"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.2402369,
+          24.8430068
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "Type": "Pet",
+      "properties": {
+        "Name": "丑咖啡 BU-SU café",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "桃園市大溪區中山路53號",
+        "Time": "11:00-19:00 星期三休息",
+        "Tel": "03-3888887",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/29749872_2085616418122368_5571880265731875119_o.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=41cc243c8ea78cf470354cc05da155c1&oe=5D3CC336"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.2856964,
+          24.8819685
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "Type": "Pet",
+      "properties": {
+        "Name": "Coffee Okane",
+        "Zone": "北部",
+        "Classification": "寵物餐廳",
+        "Add": "桃園市大溪區勝利街161號",
+        "Time": "11:00-19:00 星期四休息",
+        "Tel": "0917-176988",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/55949119_2366211006969068_6059381917516562432_n.jpg?_nc_cat=106&_nc_ht=scontent.ftpe3-1.fna&oh=29beb96228e275bd133e2ed9e5c430db&oe=5D3310C6"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.2830593,
+          24.8729878
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "Type": "Pet",
+      "properties": {
+        "Name": "狗狗水世界GoGoWaterworld",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物樂園",
+        "Add": "苗栗縣苑裡鎮山腳里錦山22-2號",
+        "Time": "10:30-17:30 星期一二休息",
+        "Tel": "03-7742299",
+        "Category": [1,3],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/32169765_1882875595104298_2796378108922429440_o.jpg?_nc_cat=107&_nc_ht=scontent.ftpe3-2.fna&oh=f9dbb312a3d15ff00c6737c1de06c36c&oe=5D32E488"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6908065,
+          24.4166745
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "Type": "Pet",
+      "properties": {
+        "Name": "幸福農場",
+        "Zone": "北部",
+        "Classification": "寵物餐廳/寵物樂園",
+        "Add": "苗栗縣通霄鎮通灣58號",
+        "Time": "09:30-18:00 星期五六日休息",
+        "Tel": "0958-752800",
+        "Category": [1,3],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/55719218_1066815746839438_5212246888790622208_o.jpg?_nc_cat=107&_nc_ht=scontent.ftpe3-2.fna&oh=b0e2f183ff7c8f6f771775ced9757365&oe=5D391AD2"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6905862,
+          24.5211343
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "Type": "Pet",
+      "properties": {
+        "Name": "包旺家-小犬食堂",
+        "Zone": "中部",
+        "Classification": "寵物餐廳",
+        "Add": "台中市北屯區柳陽西街2巷1號",
+        "Time": "11:00-19:00 星期二休息",
+        "Tel": "04-22353669",
+        "Category": [1],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/29793728_902592366590043_866701357833256960_n.jpg?_nc_cat=110&_nc_ht=scontent.ftpe4-2.fna&oh=79be1599159be61afd430f6afadab427&oe=5D6E8AAA"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6885399,
+          24.167257
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "Type": "Pet",
+      "properties": {
+        "Name": "樂逗森林",
+        "Zone": "中部",
+        "Classification": "寵物餐廳/寵物樂園",
+        "Add": "台中市南區大慶街二段49-2號",
+        "Time": "12:00-18:00 星期一二休息",
+        "Tel": "04-22655838",
+        "Category": [1,3],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/28279041_1678516658853250_3775469466381212244_n.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=e3f900d9f2be4ef204926c56d019f310&oe=5D3B6371"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.648964,
+          24.117947
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "Type": "Pet",
+      "properties": {
+        "Name": "肥窩咖啡",
+        "Zone": "南部",
+        "Classification": "寵物餐廳",
+        "Add": "台南市北區開元路148巷24號",
+        "Time": "09:30-17:00 星期三休息",
+        "Tel": "06-2384607",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/16265857_1500046646704638_6660354524968778538_n.jpg?_nc_cat=108&_nc_ht=scontent.ftpe3-2.fna&oh=be7ba49ab19409d17de71385254e9f1a&oe=5D2F103B"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.2196502,
+          23.0058299
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "Type": "Pet",
+      "properties": {
+        "Name": "TNAG 項圈工場主題寵物餐廳",
+        "Zone": "南部",
+        "Classification": "寵物餐廳",
+        "Add": "台南市南區大成路一段40號",
+        "Time": "平日 11:00-20:00 假日 11:00-21:00  星期一休息",
+        "Tel": "0985－327588",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/18698432_1377663702300203_7914113252145243762_n.jpg?_nc_cat=100&_nc_ht=scontent.ftpe3-1.fna&oh=041f20d96db00e1fc06ff3947b1f55c9&oe=5D33BC23"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.202291,
+          22.975161
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "Type": "Pet",
+      "properties": {
+        "Name": "森 • 呼吸 Jorona Park 寵物休閒廣場",
+        "Zone": "南部",
+        "Classification": "寵物餐廳",
+        "Add": "台南市關廟區中大街138巷7號",
+        "Time": "星期五六日一 11:00-17:00",
+        "Tel": "06-5551552",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/35265864_972717182897811_7430185334933028864_o.jpg?_nc_cat=102&_nc_ht=scontent.ftpe3-2.fna&oh=c6570ea58e03c1290f6cfebd93f24aa4&oe=5D70FB52"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.3564477,
+          22.8985925
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "Type": "Pet",
+      "properties": {
+        "Name": "愛上布諾閣",
+        "Zone": "南部",
+        "Classification": "寵物餐廳",
+        "Add": "高雄市大樹區龍目路54之3號",
+        "Time": "11:00-19:00 星期一二休息",
+        "Tel": "07-6529336",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/10866092_650539295056832_229865347318629587_o.jpg?_nc_cat=105&_nc_ht=scontent.ftpe3-2.fna&oh=b9af7a95d843e343d8a84ab8248dc57b&oe=5D29F18D"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.408202,
+          22.690537
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Mona's cafe",
+        "Zone": "南部",
+        "Classification": "寵物餐廳",
+        "Add": "高雄市苓雅區河南路288號",
+        "Time": "11:30-21:30 星期一休息",
+        "Tel": "07-2237745",
+        "Category": [1],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t31.0-8/23270443_1739039649462960_8831192910443850477_o.jpg?_nc_cat=106&_nc_ht=scontent.ftpe3-1.fna&oh=9eef917a0d1d2acc2197f832adb30593&oe=5D6F2185"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.317715,
+          22.633388
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "象園咖啡",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市中正區林森北路9巷13號",
+        "Time": "12:00-21:00",
+        "Tel": "02-23560766",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/37002694_1887115101352864_565415797225160704_o.jpg?_nc_cat=102&_nc_ht=scontent.ftpe3-2.fna&oh=38bbebeeba2b61494c496f4224b5a93c&oe=5D711F05"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5200462,
+          25.0485706
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "春天農場",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳/寵物樂園",
+        "Add": "桃園市龜山區長壽路272號",
+        "Time": "09:00-21:00",
+        "Tel": "03-3502953",
+        "Category": [2,3],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/934989_10201163389704790_626805469_n.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=54642afad595856f1fbd8698d78bc6e5&oe=5D2B1B69"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.337166,
+          24.998913
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "3號咖啡",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "桃園市新屋區笨港里六鄰榕樹下36-3號",
+        "Time": "10:00-20:00 星期一休息",
+        "Tel": "03-4766283",
+        "Category": [2],
+        "Images": "https://lh3.googleusercontent.com/proxy/qkmh3YWsNGRDv5s8dyfVo1yWSoW7yaQASgDbdCBpzkwXTZJGI1XD70UavUPjBPguLXzkh1GeYqkgmBN79R0SHxd0MLcc7hNNPUYwi5QGh_GS"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.0158168,
+          24.9734177
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "煮雲軒景觀餐廳",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市內湖區碧山路32-1號",
+        "Time": "12:00-21:00",
+        "Tel": "02-23560766",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/21950979_1600205316693247_54927993985968300_o.jpg?_nc_cat=102&_nc_ht=scontent.ftpe3-2.fna&oh=d58302188f8f89a3c84e7c95cd613206&oe=5D30B2F8"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5864343,
+          25.1000528
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "阿福號",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市內湖區內湖路一段47巷6弄12號1樓",
+        "Time": "07:30-14:00",
+        "Tel": "02-27977456",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t31.0-8/15776734_960696100698407_4218687409255020929_o.jpg?_nc_cat=106&_nc_ht=scontent.ftpe3-1.fna&oh=bcc70bef6912d49068fd40069e6a8cb2&oe=5D46978B"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.5672765,
+          25.0800956
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "湛盧 Zhanlu Coffee (忠孝門市)",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市大安區忠孝東路四段50號",
+        "Time": "12:00-22:00",
+        "Tel": "02-27715303",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/23472979_1972204656129724_12408742907400369_n.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=7ef7b122513c5f1bffcaf1a483b0417f&oe=5D351E7F"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.567787,
+          25.0796381
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "團緣涮涮鍋",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市內湖區成功路三段164號",
+        "Time": "11:00-15:00 17:00-22:00",
+        "Tel": "02-87922392",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/56857755_1109802899208086_1788416303220916224_o.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=c199bd79ce9b43eb51a9a2fbb5f6981d&oe=5D76ACEC"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.59021,
+          25.080504
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "TOROS鮮切牛排 內湖旗艦店",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "114台北市內湖區民善街215號",
+        "Time": "平日 11:30-14:30 17:00-21:00 假日 11:00-21:00",
+        "Tel": "02-27967999",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/1914335_298711635300_5185590_n.jpg?_nc_cat=108&_nc_ht=scontent.ftpe3-2.fna&oh=77017c040f3668d2b5d46ebc4b24bde0&oe=5D399148"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.57476,
+          25.064243
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Alice Cafe 愛麗絲咖啡",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市信義區信義路六段9號",
+        "Time": "08:30-22:00 星期二休息",
+        "Tel": "02-27272609",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/24799677_2156882570992388_1009039724971334251_o.jpg?_nc_cat=108&_nc_ht=scontent.ftpe3-2.fna&oh=fa553393dffe65ebdfb0588c603bfcda&oe=5D46B9E4"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.575108,
+          25.034123
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "ERC Cafe阿達阿永咖啡廳",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市內湖區新湖一路200號",
+        "Time": "11:30-21:30",
+        "Tel": "02 2791 8885",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/12485974_214492882218051_7351091172605791145_o.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=51280358587f9992c4499b43f586d83a&oe=5D3628C8"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.563176,
+          25.0431659
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Drip Cafe 好滴咖啡 忠孝店",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市信義區忠孝東路四段553巷26號",
+        "Time": "11:30-22:00",
+        "Tel": "02-27648181",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/15192642_1499831220045698_1019341164889107021_n.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=e5de55a604cf1b979dfe5dbdc8cd2a4b&oe=5D333FCB"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.562916,
+          25.043524
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Caffe Vintage",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台北市信義區莊敬路391巷1弄2號",
+        "Time": "11:00-22:00",
+        "Tel": "02-27586220",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t31.0-8/1398274_684635964893444_782831002_o.jpg?_nc_cat=111&_nc_ht=scontent.ftpe4-2.fna&oh=ea41ff7811aa215cebd30c5c0ec995b8&oe=5D36BE09"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.565603,
+          25.028009
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "米豆早午餐",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "新北市新莊區中安街29號",
+        "Time": "平日 06:40-13:00 假日 07:10-13:00 星期一休息",
+        "Tel": "02-29900593",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/54257336_2193896074031601_1614207859849953280_o.jpg?_nc_cat=101&_nc_ht=scontent.ftpe3-2.fna&oh=2bb558d7ccff877c6dcc00d69f5ba938&oe=5D455FFB"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.452655,
+          25.0461609
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "綠歐蕾",
+        "Zone": "北部",
+        "Classification": "寵物友善餐廳",
+        "Add": "新北市新莊區和興街73號",
+        "Time": "11:00-23:00",
+        "Tel": "02-22775236",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/1781394_694107753961819_1093946923_o.jpg?_nc_cat=102&_nc_ht=scontent.ftpe3-2.fna&oh=4844172bf865a40beb9cc2c5f416363d&oe=5D75327B"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.445979,
+          25.0412753
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "HaoHaoKaffe",
+        "Zone": "東部",
+        "Classification": "寵物友善餐廳",
+        "Add": "宜蘭縣五結鄉中正路一段2巷125號",
+        "Time": "10:00-18:00",
+        "Tel": "03-9558281",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/52743151_2534119333325234_1599820419488022528_n.jpg?_nc_cat=106&_nc_ht=scontent.ftpe3-1.fna&oh=45159ba6d8c71445d43f3c59d3ca8494&oe=5D383F58"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.765275,
+          24.672553
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Amy's Cafe 愛蜜絲下午茶",
+        "Zone": "東部",
+        "Classification": "寵物友善餐廳",
+        "Add": "宜蘭縣羅東鎮中山路四段20巷20號",
+        "Time": "10:00-18:30",
+        "Tel": "03-9511826",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/52823466_2573648252709804_5707211139163619328_n.jpg?_nc_cat=109&_nc_ht=scontent.ftpe3-2.fna&oh=fe07e001f3743f68d3269f0743a8ad4c&oe=5D453C68"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.7642108,
+          24.6734269
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "船來雪淇淋",
+        "Zone": "東部",
+        "Classification": "寵物友善餐廳",
+        "Add": "宜蘭縣羅東鎮中華路37-5號",
+        "Time": "平日 11:00-22:00 假日 10:30-22:00",
+        "Tel": "03-9568989",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/36769957_1002072313251030_5076170290354978816_n.jpg?_nc_cat=107&_nc_ht=scontent.ftpe3-2.fna&oh=b471d7c15352303e72dfa60776adecd5&oe=5D754259"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          121.7665821,
+          24.677137
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "橋。咖啡　Bridge Café",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市北區錦新街56號",
+        "Time": "08:00-21:00 星期二休息",
+        "Tel": "04-22231171",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/45390721_2209523279118486_2186306733561872384_o.jpg?_nc_cat=110&_nc_ht=scontent.ftpe4-2.fna&oh=9c0cf98c4a612b5cd4e7ba9854d544c9&oe=5D367A6E"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6869345,
+          24.1531093
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "雙魚二次方",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市北區育才北路8號",
+        "Time": "11:30-20:00 星期三休息",
+        "Tel": "0982-670109",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/20621037_1621226331222360_3131102606254489942_n.jpg?_nc_cat=108&_nc_ht=scontent.ftpe3-2.fna&oh=ec63ff731556b58e91412ee6e0a5acf7&oe=5D3F9AE2"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6880343,
+          24.1519847
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "Minou Cafè  咪奴咖啡",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市西區館前路6號",
+        "Time": "10:00-19:00 星期二休息",
+        "Tel": "04 2323 9595",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/51121359_1190371851128252_5581592567050403840_n.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=389148f8c5c21fa08ce7a26169da7895&oe=5D3A8531"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6655043,
+          24.1560137
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "核果美食工坊",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市西區五權西四街61號",
+        "Time": "平日 11:00-15:30 假日 17:00-22:10",
+        "Tel": "04-23781768",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/328325_292310824126300_470336916_o.jpg?_nc_cat=109&_nc_ht=scontent.ftpe3-2.fna&oh=816bee8b9e22c3fb8520d472bce2e041&oe=5D347D34"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.662499,
+          24.1371863
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "鐵皮駅",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市西區向上北路106號",
+        "Time": "11:30-21:00 星期二休息",
+        "Tel": "04-23019859",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/48423184_10156600164440743_7649207677523853312_o.jpg?_nc_cat=104&_nc_ht=scontent.ftpe4-2.fna&oh=1a8913d4a192e7edb67e09678c91e241&oe=5D45A477"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6639959,
+          24.1479316
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "青蛙墨西哥餐廳",
+        "Zone": "中部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台中市北區育德路30號",
+        "Time": "11:00-00:00",
+        "Tel": "04-22030182",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-1.fna.fbcdn.net/v/t1.0-9/1601502_681904265195851_1847336816_n.jpg?_nc_cat=106&_nc_ht=scontent.ftpe3-1.fna&oh=518ecc2c30648b8d5e0dcec9c3ccbe5d&oe=5D34700F"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.6562229,
+          24.1551503
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "小椿食堂",
+        "Zone": "南部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台南市中西區府前路一段292號",
+        "Time": "11:00-14:00 17:00-21:30",
+        "Tel": "06-2232598",
+        "Category": [2],
+        "Images": "https://scontent.ftpe4-2.fna.fbcdn.net/v/t1.0-9/1655859_217228451806797_455011387_n.jpg?_nc_cat=111&_nc_ht=scontent.ftpe4-2.fna&oh=c66b3e45cc35a1f5af8d0871699d5547&oe=5D36EF53"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.1992632,
+          22.9902791
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "赤崁璽樓",
+        "Zone": "南部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台南市中西區西門路二段372巷10號",
+        "Time": "11:30-14:30 17:30-21:00",
+        "Tel": "06-2245179",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t1.0-9/55489143_2596895310381050_5467479765646573568_o.jpg?_nc_cat=102&_nc_ht=scontent.ftpe3-2.fna&oh=bf7c5684700ffc6c03a8997a70291b10&oe=5D44C9B1"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.200952,
+          22.998096
+        ]
+      }
+    },
+    {
+      "id": 48,
+      "Type": "Pet-friendly",
+      "properties": {
+        "Name": "綠皮開心果",
+        "Zone": "南部",
+        "Classification": "寵物友善餐廳",
+        "Add": "台南市中西區府中街128號",
+        "Time": "平日 11:00-19:30 假日 10:30-19:30",
+        "Tel": "06-2206338",
+        "Category": [2],
+        "Images": "https://scontent.ftpe3-2.fna.fbcdn.net/v/t31.0-8/20045341_1747832438578423_3323581936771900950_o.jpg?_nc_cat=108&_nc_ht=scontent.ftpe3-2.fna&oh=24424c1090a31346ea98d92e3ed946a3&oe=5D42342E"
+      },
+      "geometry": {
+        "Type": "Point",
+        "Coordinates": [
+          120.2051508,
+          22.9902423
+        ]
+      }
+    }
+  ]
+}

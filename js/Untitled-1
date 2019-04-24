@@ -1,0 +1,20 @@
+//取得屬性值//
+setAttribute()
+(class = "name")
+"name" --> 就是屬性值
+
+//檢查是否有該屬性//
+hasAttribute()
+
+//設定屬性值//
+getAttribute()
+
+removeAttribute()
+//移除屬性//
+  --removeAttr()
+  --addClass()
+  --removeClass();
+
+
+attr('style','display: none;')
+props
