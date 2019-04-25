@@ -24,7 +24,7 @@ let number_of_items = 0;
 let number_of_pages = 0;
 let textNode;
 let pagination = document.querySelector('.pagination');
-textNode = '';
+let origialArr = [];
 
 
 // "1"寵物餐廳
@@ -35,14 +35,18 @@ textNode = '';
 // "6"浪浪中途
 // "7"寵物雜貨
 $(document).ready(function () {
-
+    //關鍵字查詢
     $('.point-btn').click(function () {
         $('.point').removeClass('dispoint').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
+        // listCount();
+        // console.log(document.querySelectorAll('.page-num')[0].classList);
+        // document.querySelectorAll('.page-num')[0].classList.add('active');
         if ($('.map').hasClass('disblock')) {
             $('.map').removeClass('disblock').addClass('dismap');
         }
     })
+    //地圖式查詢
     $('.map-btn').click(function () {
         $('.map').removeClass('dismap').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
@@ -51,6 +55,7 @@ $(document).ready(function () {
         }
     })
 
+    //用ajax撈API資料
     $.ajax({
         url: 'http://localhost:3000/posts',
         method: 'get',
@@ -73,6 +78,10 @@ $(document).ready(function () {
         for (let i = 0; i < allLen; i++) {
             resType.push(allResults[i].properties.Classification);
         }
+
+        total();
+
+        //各地區撈幾筆資料
         let tempNorth = 0;
         let tempMid = 0;
         let tempSouth = 0;
@@ -103,71 +112,16 @@ $(document).ready(function () {
             categoryArr.push(allResults[i].properties.Category);
         }
 
-        $('.btn-radius').on('click', function (e) {
-            pagination.innerHTML = '';
-            if (e.target.id !== 'all') {
-                $('#all').removeClass('active');
-            } else {
-                $('#all').addClass('active');
-                $('.btn-radius').attr('class', 'btn-radius');
-            }
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-            } else {
-                $(this).addClass('active');
-            }
-
-            // let selectCategory;
-            // list.innerHTML = '';
-            selectArry = [];
-            $('.infoCard').hide();
-            infoCardshow = [];
-            $('.btn-radius.active').each(function () {
-                selectArry.push(Number(this.dataset.num));
-            });
-            categoryArr.forEach((val, index) => {
-                if (arrInArr(selectArry, val)) {
-                    $($('.infoCard')[index]).show();
-                    infoCardshow.push($('.infoCard')[index]);
-                }
-            });
-            listCount();
-        });
-
-        // $('.total').on('click',function (e) {
-        //     list.innerHTML = '';
-        //     for ( let i = 0; i < allLen; i++) {
-        //         list.innerHTML += `
-        //         <div class="mt-md-3 border-style">
-        //             <div class="bg-warning">
-        //                 <div class="row list">
-        //                     <div class="col-md-3 no-gutter">
-        //                         <img class="w-100 h-100" src="${allResults[i].properties.Images}">
-        //                     </div> 
-        //                     <div class="col-md-9 my-md-2">
-        //                         <h4>${allResults[i].properties.Name}</h4>
-        //                         <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
-        //                         ${allResults[i].properties.Tel}</p>
-        //                         <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
-        //                         ${allResults[i].properties.Add}</p>
-        //                         <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
-        //                         ${allResults[i].properties.Time}</p>
-        //                         <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
-        //                         ${allResults[i].properties.Classification}</p>
-        //                     </div>
-        //                 </div> 
-        //             </div>      
-        //         </div>`;
-        //     }
-        // });
-
+        //click 地區按鈕(areaClick),並innerHTML渲染
         $('.areaClick').on('click', function (e) {
-            let el = e.target.textContent;
-            console.log(el);
-            list.innerHTML = '';
-            for (let i = 0; i < allLen; i++) {
-                if (el.indexOf(allZones[i]) !== -1) {
-                    list.innerHTML += `
+                $('#all').removeClass('active');
+                $('.btn-radius').removeClass('active');
+                let el = e.target.textContent;
+                console.log(el);
+                list.innerHTML = '';
+                for (let i = 0; i < allLen; i++) {
+                    if (el.indexOf(allZones[i]) !== -1) {
+                        list.innerHTML += `
                     <div class="mt-md-3 border-style infoCard">
                         <div class="bg-warning">
                             <div class="row list"> 
@@ -188,49 +142,57 @@ $(document).ready(function () {
                             </div> 
                         </div>      
                     </div>`;
+                    }
                 }
+                //先把之前陣列裡面的值清空,計算出每一個地區幾筆資料,並加入到陣列,然後執行計算分頁(listCount)
+                infoCardshow = [];
+                $('.infoCard').each(function () {
+                    infoCardshow.push(this);
+                })
+                listCount();
+                console.log(document.querySelectorAll('.page-num')[0].classList);
+                document.querySelectorAll('.page-num')[0].classList.add('active');
+            });
+
+        //點選分類btn(btn-radius)新增刪除class        
+        $('.btn-radius').on('click', function (e) {
+            pagination.innerHTML = '';
+            if (e.target.id !== 'all') {
+                $('#all').removeClass('active');
+            } else {
+                $('#all').addClass('active');
+                $('.btn-radius').attr('class', 'btn-radius');
             }
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
+            }
+
+            //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
+            list.innerHTML = '';
+            total();
+            selectArry = [];
+            $('.infoCard').hide();
             infoCardshow = [];
-            $('.infoCard').each(function() {
-                infoCardshow.push(this);
-            })
+            $('.btn-radius.active').each(function () {
+                selectArry.push(Number(this.dataset.num));
+            });
+            categoryArr.forEach((val, index) => {
+                if (arrInArr(selectArry, val)) {
+                    infoCardshow.push($('.infoCard')[index]);
+                    $($('.infoCard')[index]).show();
+                }
+            });
             listCount();
+            console.log(document.querySelectorAll('.page-num')[0].classList);
+            document.querySelectorAll('.page-num')[0].classList.add('active');
         });
-
-
-
-        for (let i = 0; i < allLen; i++) {
-            list.innerHTML += `
-            <div class="mt-md-3 border-style infoCard">
-                <div class="bg-warnin">
-                    <div class="row list">
-                        <div class="col-md-3 no-gutter">
-                            <img class="w-100 h-100" src="${allResults[i].properties.Images}">
-                        </div> 
-                        <div class="col-md-9 my-md-2">
-                            <h4>${allResults[i].properties.Name}</h4>
-                            <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Tel}</p>
-                            <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Add}</p>
-                            <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Time}</p>
-                            <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Classification}</p>
-                        </div>
-                    </div> 
-                </div>      
-                </div>`;
-        };
 
         $('.infoCard').each(function () {
             infoCardshow.push(this);
         });
 
-
-        $('#all').on('click', function () {
-            $('.infoCard').show();
-        })
 
         let image = {
             url: '../images/point-icon.png',
@@ -279,11 +241,6 @@ $(document).ready(function () {
         };
 
 
-
-
-
-
-
     }).fail(function (err) {
         console.log(err)
     });
@@ -294,10 +251,10 @@ let thisYear = today.getFullYear();
 year.innerHTML = `&copy; ${thisYear}`;
 
 
-function totalClick() {
+function initial() {
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
-        <div class="mt-md-3 border-style">
+        <div class="mt-md-3 border-style inforCard">
             <div class="bg-warning">
                 <div class="row list">
                     <div class="col-md-3 no-gutter">
@@ -397,7 +354,46 @@ function listCount() {
          </a>
      </li> `;
     }
-    // // pagination.innerHTML = ''; 
-    // console.log(document.querySelectorAll('.page-num')[0].classList);
-    // document.querySelectorAll('.page-num')[0].classList.add('active');
+    // for (let i = 0 ; i < infoCardshow.length; i++){
+    //     infoCardshow[i].style.display = 'none';
+    //     origialArr.push(infoCardshow[i]);
+    // }
+    // for (let i = 0; i < show_of_page; i++){
+    //     origialArr.slice(0, show_of_page)[i].style.display = 'block';
+    // }
+    
 }
+
+function total (){
+    for (let i = 0; i < allLen; i++) {
+        list.innerHTML += `
+        <div class="mt-md-3 border-style infoCard">
+            <div class="bg-warnin">
+                <div class="row list">
+                    <div class="col-md-3 no-gutter">
+                        <img class="w-100 h-100" src="${allResults[i].properties.Images}">
+                    </div> 
+                    <div class="col-md-9 my-md-2">
+                        <h4>${allResults[i].properties.Name}</h4>
+                        <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
+                        ${allResults[i].properties.Tel}</p>
+                        <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
+                        ${allResults[i].properties.Add}</p>
+                        <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
+                        ${allResults[i].properties.Time}</p>
+                        <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
+                        ${allResults[i].properties.Classification}</p>
+                    </div>
+                </div> 
+            </div>      
+        </div>`;
+    };
+}
+
+
+// function changePage(page_num) { 
+//     for (let i = 0; i < show_of_page; i++){
+//         document.querySelectorAll('.page-num')[i].classList.remove('active');
+//     }
+//     document.querySelectorAll('page-num')[page-num].classList.add('active');
+// }
