@@ -1,4 +1,4 @@
-let allResults = [];  //全部的資料
+let allReof_pagesults = [];  //全部的資料
 let allZones = [];  //全部的區（重複）
 let clearZones = [];  //總共有幾區
 let allLen;  //總長度
@@ -19,12 +19,13 @@ let selectArry = [];
 let mapList = document.querySelector('.map-list');
 let btnRadius = document.querySelectorAll('.btn-radius');
 let infoCardshow = [];
-let show_of_page = 5;
+let show_per_page = 5;
 let number_of_items = 0;
 let number_of_pages = 0;
 let textNode;
 let pagination = document.querySelector('.pagination');
-let origialArr = [];
+let originalArr = [];
+let activePage;
 
 
 // "1"寵物餐廳
@@ -332,38 +333,6 @@ function arrInArr(ary, target) {
     return true;
 }
 
-function listCount() {
-    number_of_items = infoCardshow.length;
-    number_of_pages = Math.ceil(number_of_items / show_of_page);
-    textNode = '';
-    for (let i = 1; i < number_of_pages + 1; i++) {
-        textNode += `
-        <li class="page-item page-num" onclick="changePage(${i - 1})">
-        <a class="page-link" href="#">${i}</a>
-        </li>`;
-        pagination.innerHTML = `
-     <li class="page-item">
-         <a class="page-link" href="#" aria-label="Previous">
-             <span aria-hidden="true">&laquo;</span>
-         </a>
-     </li>
-     ${textNode}
-     <li class="page-item">
-         <a class="page-link" href="#" aria-label="Next">
-             <span aria-hidden="true">&raquo;</span>
-         </a>
-     </li> `;
-    }
-    // for (let i = 0 ; i < infoCardshow.length; i++){
-    //     infoCardshow[i].style.display = 'none';
-    //     origialArr.push(infoCardshow[i]);
-    // }
-    // for (let i = 0; i < show_of_page; i++){
-    //     origialArr.slice(0, show_of_page)[i].style.display = 'block';
-    // }
-    
-}
-
 function total (){
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
@@ -390,10 +359,68 @@ function total (){
     };
 }
 
+function listCount() {
+    number_of_items = infoCardshow.length;
+    number_of_pages = Math.ceil(number_of_items / show_per_page);
+    textNode = '';
+    for (let i = 1; i < number_of_pages + 1; i++) {
+        textNode += `
+        <li class="page-item page-num" onclick="changePage(${i - 1})">
+        <a class="page-link" href="#all">${i}</a>
+        </li>`;
+        pagination.innerHTML = `
+     <li class="page-item">
+         <a class="page-link" href="#all" aria-label="Previous" onclick="preOrNext('pre')">
+             <span aria-hidden="true">&laquo;</span>
+         </a>
+     </li>
+     ${textNode}
+     <li class="page-item">
+         <a class="page-link" href="#all" aria-label="Next" onclick="preOrNext('next')">
+             <span aria-hidden="true">&raquo;</span>
+         </a>
+     </li> `;
+    }
+    for (let i = 0 ; i < infoCardshow.length; i++){
+        infoCardshow[i].style.display = 'none';
+        originalArr.push(infoCardshow[i]);
+    }
+    for (let i = 0; i < show_per_page; i++){
+        originalArr.slice(0, show_per_page)[i].style.display = 'block';
+    }
+    
+}
 
-// function changePage(page_num) { 
-//     for (let i = 0; i < show_of_page; i++){
-//         document.querySelectorAll('.page-num')[i].classList.remove('active');
-//     }
-//     document.querySelectorAll('page-num')[page-num].classList.add('active');
-// }
+
+function changePage(page_num) { 
+    for (let i = 0; i < show_per_page; i++){
+        document.querySelectorAll('.page-num')[i].classList.remove('active');
+    }
+    document.querySelectorAll('.page-num')[page_num].classList.add('active');
+
+    let start_form = page_num * show_per_page;
+    let end_on = start_form + show_per_page;
+
+    for (let i = 0; i < infoCardshow.length; i++){
+        $(infoCardshow[i]).hide();
+    }
+
+    for (let i = 0; i < show_per_page; i++) {
+        $(originalArr.slice(start_form, end_on)).show();
+    
+    }
+}
+
+function preOrNext (go) {
+    for (let i = 0; i < number_of_pages; i++){
+        if (document.querySelectorAll('.page-num')[i].classList.contains('active')){
+            activePage = document.querySelectorAll('.page-num')[i].children[0];
+        }
+    }
+    let now = parseInt(activePage.textContent) - 1
+    if (go == 'pre' && now > 0) {
+        changePage(now - 1) 
+    } else if (go == 'next' && now < number_of_pages - 1){
+        changePage(now + 1)
+    }
+}
