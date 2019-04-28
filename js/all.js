@@ -40,9 +40,9 @@ $(document).ready(function () {
     $('.point-btn').click(function () {
         $('.point').removeClass('dispoint').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
-        // listCount();
+        listCount();
         // console.log(document.querySelectorAll('.page-num')[0].classList);
-        // document.querySelectorAll('.page-num')[0].classList.add('active');
+        document.querySelectorAll('.page-num')[0].classList.add('active');
         if ($('.map').hasClass('disblock')) {
             $('.map').removeClass('disblock').addClass('dismap');
         }
@@ -81,6 +81,7 @@ $(document).ready(function () {
         }
 
         total();
+        
 
         //各地區撈幾筆資料
         let tempNorth = 0;
@@ -115,14 +116,14 @@ $(document).ready(function () {
 
         //click 地區按鈕(areaClick),並innerHTML渲染
         $('.areaClick').on('click', function (e) {
-                $('#all').removeClass('active');
-                $('.btn-radius').removeClass('active');
-                let el = e.target.textContent;
-                console.log(el);
-                list.innerHTML = '';
-                for (let i = 0; i < allLen; i++) {
-                    if (el.indexOf(allZones[i]) !== -1) {
-                        list.innerHTML += `
+            $('#all').removeClass('active');
+            $('.btn-radius').removeClass('active');
+            let el = e.target.textContent;
+            console.log(el);
+            list.innerHTML = '';
+            for (let i = 0; i < allLen; i++) {
+                if (el.indexOf(allZones[i]) !== -1) {
+                    list.innerHTML += `
                     <div class="mt-md-3 border-style infoCard">
                         <div class="bg-warning">
                             <div class="row list"> 
@@ -143,17 +144,17 @@ $(document).ready(function () {
                             </div> 
                         </div>      
                     </div>`;
-                    }
                 }
-                //先把之前陣列裡面的值清空,計算出每一個地區幾筆資料,並加入到陣列,然後執行計算分頁(listCount)
-                infoCardshow = [];
-                $('.infoCard').each(function () {
-                    infoCardshow.push(this);
-                })
-                listCount();
-                console.log(document.querySelectorAll('.page-num')[0].classList);
-                document.querySelectorAll('.page-num')[0].classList.add('active');
-            });
+            }
+            //先把之前陣列裡面的值清空,計算出每一個地區幾筆資料,並加入到陣列,然後執行計算分頁(listCount)
+            infoCardshow = [];
+            $('.infoCard').each(function () {
+                infoCardshow.push(this);
+            })
+            listCount();
+            console.log(document.querySelectorAll('.page-num')[0].classList);
+            document.querySelectorAll('.page-num')[0].classList.add('active');
+        });
 
         //點選分類btn(btn-radius)新增刪除class        
         $('.btn-radius').on('click', function (e) {
@@ -181,8 +182,8 @@ $(document).ready(function () {
             });
             categoryArr.forEach((val, index) => {
                 if (arrInArr(selectArry, val)) {
-                    infoCardshow.push($('.infoCard')[index]);
                     $($('.infoCard')[index]).show();
+                    infoCardshow.push($('.infoCard')[index]);
                 }
             });
             listCount();
@@ -333,7 +334,7 @@ function arrInArr(ary, target) {
     return true;
 }
 
-function total (){
+function total() {
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
         <div class="mt-md-3 border-style infoCard">
@@ -360,6 +361,7 @@ function total (){
 }
 
 function listCount() {
+    originalArr = [];
     number_of_items = infoCardshow.length;
     number_of_pages = Math.ceil(number_of_items / show_per_page);
     textNode = '';
@@ -381,19 +383,19 @@ function listCount() {
          </a>
      </li> `;
     }
-    for (let i = 0 ; i < infoCardshow.length; i++){
-        infoCardshow[i].style.display = 'none';
+    for (let i = 0; i < infoCardshow.length; i++) {
+        $(infoCardshow[i]).hide();
         originalArr.push(infoCardshow[i]);
     }
-    for (let i = 0; i < show_per_page; i++){
-        originalArr.slice(0, show_per_page)[i].style.display = 'block';
+    for (let i = 0; i < show_per_page; i++) {
+       $(originalArr.slice(0, show_per_page)[i]).show();
     }
-    
+
 }
 
 
-function changePage(page_num) { 
-    for (let i = 0; i < show_per_page; i++){
+function changePage(page_num) {
+    for (let i = 0; i < number_of_pages; i++) {
         document.querySelectorAll('.page-num')[i].classList.remove('active');
     }
     document.querySelectorAll('.page-num')[page_num].classList.add('active');
@@ -401,26 +403,26 @@ function changePage(page_num) {
     let start_form = page_num * show_per_page;
     let end_on = start_form + show_per_page;
 
-    for (let i = 0; i < infoCardshow.length; i++){
+    for (let i = 0; i < infoCardshow.length; i++) {
         $(infoCardshow[i]).hide();
     }
 
     for (let i = 0; i < show_per_page; i++) {
         $(originalArr.slice(start_form, end_on)).show();
-    
+
     }
 }
 
-function preOrNext (go) {
-    for (let i = 0; i < number_of_pages; i++){
-        if (document.querySelectorAll('.page-num')[i].classList.contains('active')){
+function preOrNext(go) {
+    for (let i = 0; i < number_of_pages; i++) {
+        if (document.querySelectorAll('.page-num')[i].classList.contains('active')) {
             activePage = document.querySelectorAll('.page-num')[i].children[0];
         }
     }
     let now = parseInt(activePage.textContent) - 1
     if (go == 'pre' && now > 0) {
-        changePage(now - 1) 
-    } else if (go == 'next' && now < number_of_pages - 1){
+        changePage(now - 1)
+    } else if (go == 'next' && now < number_of_pages - 1) {
         changePage(now + 1)
     }
 }
