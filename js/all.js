@@ -32,13 +32,6 @@ let keyWord;
 
 
 
-// "1"寵物餐廳
-// "2"寵物友善餐廳
-// "3"寵物樂園
-// "4"寵物美容
-// "5"寵物安親
-// "6"浪浪中途
-// "7"寵物雜貨
 
 serchBtn.addEventListener('click', point_Serch);
 
@@ -48,7 +41,6 @@ $(document).ready(function () {
         $('.point').removeClass('dispoint').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
         listCount();
-        // console.log(document.querySelectorAll('.page-num')[0].classList);
         document.querySelectorAll('.page-num')[0].classList.add('active');
         if ($('.map').hasClass('disblock')) {
             $('.map').removeClass('disblock').addClass('dismap');
@@ -296,13 +288,6 @@ function initMap() {
             }
         ],
     });
-    // map.addListener('center_changed', function () {
-    //     // 3 seconds after the center of the map has changed, pan back to the
-    //     // marker.
-    //     window.setTimeout(function () {
-    //         map.panTo(marker.getPosition());
-    //     }, 3000);
-    // });
 };
 
 function arrInArr(ary, target) {
