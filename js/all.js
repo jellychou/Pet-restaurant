@@ -29,9 +29,22 @@ let pagination = document.querySelector('.pagination');
 let originalArr = [];
 let activePage;
 let keyWord;
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+// "1"寵物餐廳
+// "2"寵物友善餐廳
+// "3"寵物樂園
+// "4"寵物美容
+// "5"寵物安親
+// "6"浪浪中途
+// "7"寵物雜貨
+>>>>>>> 3519b1f1996b3bc9d2b284a67d1bca10c747d964
 
 serchBtn.addEventListener('click', point_Serch);
 
