@@ -29,23 +29,9 @@ let pagination = document.querySelector('.pagination');
 let originalArr = [];
 let activePage;
 let keyWord;
-<<<<<<< HEAD
+let reset = document.querySelector('.reset');
 
-
-
-=======
-
-
-
-// "1"寵物餐廳
-// "2"寵物友善餐廳
-// "3"寵物樂園
-// "4"寵物美容
-// "5"寵物安親
-// "6"浪浪中途
-// "7"寵物雜貨
->>>>>>> 3519b1f1996b3bc9d2b284a67d1bca10c747d964
-
+reset.addEventListener('click', point_Reset);
 serchBtn.addEventListener('click', point_Serch);
 
 $(document).ready(function () {
@@ -408,6 +394,7 @@ function preOrNext(go) {
 
 function point_Serch(e) {
     let tempShow = [];
+    let none = []; 
     infoCardshow.forEach(function (val, index) {
         keyWord = pointSerch.value;
         let address = $(val).data('add');
@@ -418,11 +405,36 @@ function point_Serch(e) {
             tempShow.push(val);
         } else {
             $(val).hide();
+            none.push(val);
+            if (none.length == infoCardshow.length) {
+                list.innerHTML = '查無此關鍵字';
+            }
         }
     });
     infoCardshow = tempShow;
     pagination.innerHTML = '';
     listCount();
-    document.querySelectorAll('.page-num')[0].classList.add('active');
-    
+    // document.querySelectorAll('.page-num')[0].classList.add('active');
+
 };
+
+function point_Reset() {
+    list.innerHTML = '';
+    pointSerch.value = '';
+    init();
+    selectArry = [];
+    $('.infoCard').hide();
+    infoCardshow = [];
+    $('.btn-radius.active').each(function () {
+        selectArry.push(Number(this.dataset.num));
+    });
+    categoryArr.forEach((val, index) => {
+        if (arrInArr(selectArry, val)) {
+            $($('.infoCard')[index]).show();
+            infoCardshow.push($('.infoCard')[index]);
+        }
+    });
+    listCount();
+    console.log(document.querySelectorAll('.page-num')[0].classList);
+    document.querySelectorAll('.page-num')[0].classList.add('active');
+}
