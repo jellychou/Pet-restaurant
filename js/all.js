@@ -3,6 +3,7 @@ let allZones = [];  //全部的區（重複）
 let clearZones = [];  //總共有幾區
 let allLen;  //總長度
 let resType = []; //全部的餐廳類型
+let allResults;
 let north = document.getElementById('northCount');
 let middle = document.getElementById('middleCount');
 let south = document.getElementById('southCount');
@@ -10,6 +11,7 @@ let east = document.getElementById('eastCount');
 let year = document.querySelector('.year');
 let pointSerch = document.querySelector('.point-serch');
 let serchBtn = document.querySelector('.serch-btn');
+let serchId = document.getElementById('serch');
 let list = document.querySelector('.list');
 let all = document.getElementById('all');
 let map;
@@ -26,6 +28,8 @@ let textNode;
 let pagination = document.querySelector('.pagination');
 let originalArr = [];
 let activePage;
+let keyWord;
+
 
 
 // "1"寵物餐廳
@@ -35,6 +39,9 @@ let activePage;
 // "5"寵物安親
 // "6"浪浪中途
 // "7"寵物雜貨
+
+serchBtn.addEventListener('click', point_Serch);
+
 $(document).ready(function () {
     //關鍵字查詢
     $('.point-btn').click(function () {
@@ -80,8 +87,8 @@ $(document).ready(function () {
             resType.push(allResults[i].properties.Classification);
         }
 
-        total();
-        
+        init();
+
 
         //各地區撈幾筆資料
         let tempNorth = 0;
@@ -130,7 +137,7 @@ $(document).ready(function () {
                                 <div class="col-md-3 no-gutter">
                                     <img class="w-100 h-100" src="${allResults[i].properties.Images}">
                                 </div> 
-                                <div class="col-md-9 my-md-2">
+                                <div class="col-md-9 my-md-2 order-table">
                                     <h4>${allResults[i].properties.Name}</h4>
                                     <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Tel}</p>
@@ -173,7 +180,7 @@ $(document).ready(function () {
 
             //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
             list.innerHTML = '';
-            total();
+            init();
             selectArry = [];
             $('.infoCard').hide();
             infoCardshow = [];
@@ -198,7 +205,7 @@ $(document).ready(function () {
 
         let image = {
             url: '../images/point-icon.png',
-            scaledSize: new google.maps.Size(50, 50),
+            scaledSize: new google.maps.Size(65, 65),
         };
 
         for (let i = 0; i < allResults.length; i++) {
@@ -239,8 +246,9 @@ $(document).ready(function () {
                 });
                 marker.setAnimation(google.maps.Animation.BOUNCE);
             }
-
         };
+
+
 
 
     }).fail(function (err) {
@@ -251,34 +259,6 @@ $(document).ready(function () {
 let today = new Date();
 let thisYear = today.getFullYear();
 year.innerHTML = `&copy; ${thisYear}`;
-
-
-function initial() {
-    for (let i = 0; i < allLen; i++) {
-        list.innerHTML += `
-        <div class="mt-md-3 border-style inforCard">
-            <div class="bg-warning">
-                <div class="row list">
-                    <div class="col-md-3 no-gutter">
-                        <img class="w-100 h-100" src="${allResults[i].properties.Images}">
-                    </div> 
-                    <div class="col-md-9 my-md-2">
-                        <h4>${allResults[i].properties.Name}</h4>
-                        <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Tel}</p>
-                        <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Add}</p>
-                        <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Time}</p>
-                        <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Classification}</p>
-                    </div>
-                </div> 
-            </div>      
-        </div>`;
-    }
-};
-
 
 //map
 function initMap() {
@@ -334,16 +314,17 @@ function arrInArr(ary, target) {
     return true;
 }
 
-function total() {
+function init() {
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
-        <div class="mt-md-3 border-style infoCard">
+        <div class="mt-md-3 border-style infoCard" data-name="${allResults[i].properties.Name}" 
+        data-add="${allResults[i].properties.Add}" data-classification="${allResults[i].properties.Classification}">
             <div class="bg-warnin">
                 <div class="row list">
                     <div class="col-md-3 no-gutter">
                         <img class="w-100 h-100" src="${allResults[i].properties.Images}">
                     </div> 
-                    <div class="col-md-9 my-md-2">
+                    <div class="col-md-9 my-md-2 order-table">
                         <h4>${allResults[i].properties.Name}</h4>
                         <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
                         ${allResults[i].properties.Tel}</p>
@@ -388,7 +369,7 @@ function listCount() {
         originalArr.push(infoCardshow[i]);
     }
     for (let i = 0; i < show_per_page; i++) {
-       $(originalArr.slice(0, show_per_page)[i]).show();
+        $(originalArr.slice(0, show_per_page)[i]).show();
     }
 
 }
@@ -426,3 +407,24 @@ function preOrNext(go) {
         changePage(now + 1)
     }
 }
+
+function point_Serch(e) {
+    let tempShow = [];
+    infoCardshow.forEach(function (val, index) {
+        keyWord = pointSerch.value;
+        let address = $(val).data('add');
+        let classification = $(val).data('classification');
+        let name = $(val).data('name');
+        if (address.indexOf(keyWord) !== -1 || classification.indexOf(keyWord) !== -1 || name.indexOf(keyWord) !== -1) {
+            $(val).show();
+            tempShow.push(val);
+        } else {
+            $(val).hide();
+        }
+    });
+    infoCardshow = tempShow;
+    pagination.innerHTML = '';
+    listCount();
+    document.querySelectorAll('.page-num')[0].classList.add('active');
+    
+};
