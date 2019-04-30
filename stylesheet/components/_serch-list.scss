@@ -9,6 +9,12 @@
         z-index: 1;
         left: 315px;
         top: 100px;
+        @include media-breakpoint-up(lg){
+             position: absolute;
+             z-index: 1;
+             left: 260px;
+             top: 100px;
+        }
         .btn-style {
             height: 150px;
             width: 150px;

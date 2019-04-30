@@ -9197,6 +9197,12 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
     z-index: 1;
     left: 315px;
     top: 100px; }
+    @media (min-width: 992px) {
+      .serch-list .carousel-btn {
+        position: absolute;
+        z-index: 1;
+        left: 260px;
+        top: 100px; } }
     .serch-list .carousel-btn .btn-style {
       height: 150px;
       width: 150px;
