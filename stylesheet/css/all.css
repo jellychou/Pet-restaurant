@@ -9164,7 +9164,7 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
 
 .jumbotron-bg {
   background-image: url("https://images.unsplash.com/photo-1488390005333-385a7573bad6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
-  min-height: 600px; }
+  min-height: 750px; }
 
 .bg-lighter {
   background-color: rgba(255, 255, 255, 0.35); }
@@ -9184,8 +9184,7 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
 
 .object-fit {
   -o-object-fit: cover;
-  object-fit: cover;
-  height: 300px; }
+  object-fit: cover; }
 
 .serch-list {
   position: relative; }
@@ -9195,13 +9194,25 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
   .serch-list .carousel-btn {
     position: absolute;
     z-index: 1;
-    left: 315px;
+    left: 353px;
     top: 100px; }
-    @media (min-width: 992px) {
+    @media (max-width: 1199.98px) {
       .serch-list .carousel-btn {
         position: absolute;
         z-index: 1;
-        left: 260px;
+        left: 265px;
+        top: 100px; } }
+    @media (max-width: 991.98px) {
+      .serch-list .carousel-btn {
+        position: absolute;
+        z-index: 1;
+        left: 124px;
+        top: 100px; } }
+    @media (max-width: 767.98px) {
+      .serch-list .carousel-btn {
+        position: absolute;
+        z-index: 1;
+        left: 76px;
         top: 100px; } }
     .serch-list .carousel-btn .btn-style {
       height: 150px;
@@ -9224,7 +9235,8 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
   color: gray;
   border: 2px solid #ffb5b5;
   padding: 8px;
-  margin-right: 2px; }
+  margin-right: 2px;
+  margin-bottom: 10px; }
   .btn-radius:hover {
     color: gray;
     background-color: #ffecec;
@@ -9248,3 +9260,9 @@ a.text-lessuccess:hover, a.text-lessuccess:focus {
 
 .disblock {
   display: block; }
+
+.mapstyle {
+  height: 576px; }
+  @media (max-width: 767.98px) {
+    .mapstyle {
+      height: 400px; } }

@@ -12,40 +12,39 @@
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="container">
             <a class="navbar-brand d-flex" href="index.html">
-                <img src="/images/head.png" width="80" height="80" class="d-inline-block align-top mt-md-3" alt="">
+                <img src="/images/head.png" width="80" height="80" class="d-inline-block align-top mt-md-3 ml-3 mt-3"
+                    alt="">
                 <div class="flex-direction-column">
-                    <h5 class="mt-md-2 ml-md-2 mt-2 ml-2 text-dark h1" style="height: 45px">TanTan
+                    <h5 class="mt-xl-2 ml-xl-2 mt-2 ml-2 text-dark h1" style="height: 45px">TanTan
                     </h5>
-                    <span class="ml-md-2 text-dark">Pet Restaurant<i class="fas fa-paw ml-md-2"></i></span>
+                    <span class="ml-xl-2 text-dark">Pet Restaurant<i class="fas fa-paw ml-xl-2"></i></span>
                 </div>
             </a>
-            <button class="navbar-toggler d-md-none ml-auto" type="button" data-toggle="collapse"
+            <button class="navbar-toggler d-md-none ml-auto mr-3" type="button" data-toggle="collapse"
                 data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="d-flex ml-auto">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item mr-md-2">
-                            <a class="nav-link h5 text-dark" href="index.html">首頁</a>
-                        </li>
-                        <li class="nav-item mr-md-2">
-                            <a class="nav-link h5 text-dark" href="serch.html">查詢</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link h5 text-secondary" href="remind.html">貼心提醒<span
-                                class="sr-only">(current)</span><i
-                                    class="fas fa-heart"></i></a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-xl-2 ml-3 active">
+                        <a class="nav-link h5 text-info" href="index.html">首頁<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mr-xl-2 ml-3">
+                        <a class="nav-link h5 text-dark" href="serch.html">查詢</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link h5 text-secondary" href="remind.html">貼心提醒<i class="fas fa-heart"></i></a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -60,40 +59,43 @@
                             aria-controls="contact" aria-selected="false">提出建議</a>
                     </li>
                 </ul>
-                <div class="card bg-dark text-white">
+                <div class="card bg-dark text-white pb-sm-7 pb-md-0">
                     <div class="bg-cover nav-img"
                         style="background-image: url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&auto=format&fit=crop&w=2767&q=80')">
                     </div>
                     <div class="card-img-overlay">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h1 class="text-center my-md-4 text-primary">寵物餐廳 V.S 寵物友善餐廳</h1>
-                                <div class="row mt-md-6 text-dark">
-                                    <div class="col-md-6">
+                                <h1 class="text-center my-md-4 text-primary d-none d-md-block">寵物餐廳 V.S 寵物友善餐廳</h1>
+                                <h2 class="d-block d-md-none text-center text-primary my-sm-4">寵物餐廳 V.S 寵物友善餐廳</h2>
+                                <div class="row mt-md-6 text-dark justify-content-center">
+                                    <div class="col-lg-5 col-11">
                                         <div class="bg-style pb-md-6">
-                                            <h3 class="text-secondary text-center"><i
-                                                    class="fas fa-dog mr-md-3 mt-md-6"></i>寵物餐廳</h3>
-                                            <div class="mt-md-4 text-info">
-                                                <p class="ml-md-9">主要對象：人類與寵物</p>
-                                                <p class="ml-md-9">餐點：販售人類的餐點<i class="fas fa-check-square ml-md-4"></i>
-                                                    <br><span class="ml-md-6">販售寵物的餐點<i
+                                            <h3 class="text-secondary text-center py-3 py-md-0"><i
+                                                    class="fas fa-dog mr-lg-3 mt-md-6 mr-md-4"></i>寵物餐廳</h3>
+                                            <div class="mt-md-4 text-info pb-3 pb-md-0">
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">主要對象：人類與寵物</p>
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">餐點：販售人類的餐點<i
+                                                        class="fas fa-check-square ml-md-4"></i>
+                                                    <br><span class="ml-xl-6 ml-lg-6 ml-6">販售寵物的餐點<i
                                                             class="fas fa-check-square ml-md-4"></i></span>
                                                 </p>
-                                                <p class="ml-md-9">環境：可與寵物一起用餐的環境</p>
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">環境：可與寵物一起用餐的環境</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="bg-style pb-md-6">
-                                            <h3 class="text-secondary text-center"><i
+                                    <div class="col-lg-5 col-11">
+                                        <div class="bg-style pb-md-6 mt-2 mt-md-0">
+                                            <h3 class="text-secondary text-center py-3 py-md-0"><i
                                                     class="fas fa-dog mr-md-3 mt-md-6"></i>寵物友善餐廳</h3>
-                                            <div class="mt-md-4 text-info">
-                                                <p class="ml-md-9">主要對象：人類</p>
-                                                <p class="ml-md-9">餐點：販售人類的餐點<i class="fas fa-check-square ml-md-4"></i>
-                                                    <br><span class="ml-md-6">無販售寵物餐點<i
+                                            <div class="mt-md-4 text-info pb-3 pb-md-0">
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">主要對象：人類</p>
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">餐點：販售人類的餐點<i
+                                                        class="fas fa-check-square ml-md-4"></i>
+                                                    <br><span class="ml-xl-6 ml-lg-6 ml-6">無販售寵物餐點<i
                                                             class="fas fa-times-circle ml-md-4 text-secondary"></i></span>
                                                 </p>
-                                                <p class="ml-md-9">環境：可攜帶寵物的環境</p>
+                                                <p class="ml-xl-9 ml-lg-7 ml-5">環境：可攜帶寵物的環境</p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,26 +103,26 @@
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row justify-content-center">
-                                    <div class="col-md-8 bg-style mt-md-3">
-                                        <h3 class="text-danger my-md-5 text-center"><i
+                                    <div class="col-md-8 bg-style mt-md-3 mt-sm-4 col-10">
+                                        <h3 class="text-danger my-lg-5 my-4 text-center"><i
                                                 class="fas fa-exclamation-triangle"></i>攜帶寵物注意事項</h3>
                                         <div class="my-md-5 text-info">
                                             <ol class="h4">
-                                                <li class="mb-md-4">請遵守店家的寵物公約規定</li>
-                                                <li class="mb-md-4">請盡量攜帶寵物的專用墊子、外出袋(籠)</li>
-                                                <li class="mb-md-4">請公狗能盡量使用禮貌帶，以免隨便抬腳小便或騎乘其他狗狗</li>
-                                                <li class="mb-md-4">請勿放任寵物打架、亂跑、吵鬧</li>
-                                                <li class="mb-md-4">請勿與寵物共用餐具</li>
+                                                <li class="mb-lg-4 mb-3">請遵守店家的寵物公約規定</li>
+                                                <li class="mb-lg-4 mb-3">請盡量攜帶寵物的專用墊子、外出袋(籠)</li>
+                                                <li class="mb-lg-4 mb-3">請公狗能盡量使用禮貌帶，以免隨便抬腳小便或騎乘其他狗狗</li>
+                                                <li class="mb-lg-4 mb-3">請勿放任寵物打架、亂跑、吵鬧</li>
+                                                <li class="mb-lg-4 mb-3">請勿與寵物共用餐具</li>
                                             </ol>
-                                            <h4 class="text-center py-md-5 text-primary">
-                                                請大家做個遵守規則的好主人，不要當老鼠屎，才能讓更多的餐廳能給寵物友善更多空間哦！</h4>
+                                            <h4 class="text-center pt-lg-5 text-primary pt-4">
+                                                請大家做個遵守規則的好主人，不要當老鼠屎，才能有更多的餐廳能給寵物友善更多空間哦！</h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <div class="row justify-content-center mt-md-3">
-                                    <div class="col-md-10 bg-style">
+                                    <div class="col-md-8 bg-style col-11">
                                         <div class="text-center">
                                             <h1 class="text-primary mt-md-3">我要提出建議！</h1>
                                             <span class="text-dark">感謝您熱心的提出寶貴的建議給我們</span>
@@ -150,12 +152,14 @@
             </div>
         </div>
     </div>
-    <div class="footer mt-md-8">
-        <div class="bg-success text-center text-warning py-md-3">
-            <p class="mb-md-0 pb-md-1"><span class="year"></span>寵物友善餐廳查詢</p>
-            <p class="mb-md-0">Made by Jelly</p>
+    <div class="bg-success">
+        <div class="container">
+            <div class="mb-0 text-warning text-center mt-5">
+                <p class=""><span class="year">&copy;</span>寵物友善餐廳查詢</p>
+                <p class="list-inline-item">Made by Jelly</p>
+            </div>
         </div>
-    </div>
+    </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -166,7 +170,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-    <script src="js/all.js"></script>
+    <!-- <script src="js/all.js"></script> -->
 
 </body>
 

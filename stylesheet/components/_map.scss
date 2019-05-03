@@ -1,0 +1,27 @@
+#map {
+    height: 100%;
+
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+  @include media-breakpoint-down(sm) {
+      font-weight: bold;
+  }
+}
+#infowindow-content {
+  @include media-breakpoint-down(sm) {
+      display: none;
+  }
+}
+#map #infowindow-content {
+  @include media-breakpoint-down(sm) {
+      display: inline;
+  }
+}

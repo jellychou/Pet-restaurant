@@ -24,45 +24,65 @@
 </style>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <div class="container">
             <a class="navbar-brand d-flex" href="index.html">
-                <img src="/images/head.png" width="80" height="80" class="d-inline-block align-top mt-xl-3" alt="">
+                <img src="/images/head.png" width="80" height="80" class="d-inline-block align-top mt-md-3 ml-3 mt-3"
+                    alt="">
                 <div class="flex-direction-column">
                     <h5 class="mt-xl-2 ml-xl-2 mt-2 ml-2 text-dark h1" style="height: 45px">TanTan
                     </h5>
                     <span class="ml-xl-2 text-dark">Pet Restaurant<i class="fas fa-paw ml-xl-2"></i></span>
                 </div>
             </a>
-            <button class="navbar-toggler d-xl-none ml-auto" type="button" data-toggle="collapse"
+            <button class="navbar-toggler d-md-none ml-auto mr-3" type="button" data-toggle="collapse"
                 data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="d-flex ml-auto">
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item mr-xl-2">
-                            <a class="nav-link h5 text-dark" href="index.html">首頁</a>
-                        </li>
-                        <li class="nav-item mr-xl-2 active">
-                            <a class="nav-link h5 text-info" href="serch.html">查詢<span
-                                    class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link h5 text-secondary" href="remind.html">貼心提醒<i
-                                    class="fas fa-heart"></i></a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mr-xl-2 ml-3 active">
+                        <a class="nav-link h5 text-info" href="index.html">首頁<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mr-xl-2 ml-3">
+                        <a class="nav-link h5 text-dark" href="serch.html">查詢</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link h5 text-secondary" href="remind.html">貼心提醒<i class="fas fa-heart"></i></a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div> -->
+        </div>
+    </nav>
+    <div class="container">
         <div id="carouselExampleCaptions" class="carousel slide serch-list" data-ride="carousel">
             <div class="carousel-btn">
                 <a href="#point">
-                    <button class="btn btn-primary text-white point-btn btn-style a-style mr-xl-8">關鍵字<br>搜尋</button>
+                    <button class="btn btn-primary text-white point-btn btn-style a-style mr-md-8">關鍵字<br>搜尋</button>
                 </a>
                 <a href="#map">
-                    <button class="btn btn-primary text-white map-btn btn-style a-style ml-xl-8 ml-lg-8">地圖式<br>搜尋</button>
+                    <button
+                        class="btn btn-primary text-white map-btn btn-style a-style ml-md-8 ml-sm-6 ml-8">地圖式<br>搜尋</button>
                 </a>
             </div>
             <ol class="carousel-indicators">
@@ -83,9 +103,7 @@
                 </div>
                 <div class="carousel-item carousel-header bg-cover"
                     style="background-image: url('https://images.unsplash.com/photo-1550256051-e8b328f5bf54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyxld9&auto=format&fit=crop&w=2850&q=80')">
-                    <div class="carousel-caption d-none d-xl-block">
-
-                    </div>
+                    <div class="carousel-caption d-none d-xl-block"></div>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -98,31 +116,118 @@
             </a>
         </div>
         <div class="dispoint point">
+            <div class="accordion my-sm-5 d-block d-lg-none my-3" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                地區分類查詢
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="list-group">
+                                <div href="#"
+                                    class="list-group-item list-group-item-action bg-primary border-0 text-white h5"
+                                    id="point">
+                                    <i class="fas fa-globe-asia mr-sm-3"></i>
+                                    地區分類
+                                </div>
+                                <a href="#north" class="list-group-item list-group-item-action areaClick"><i
+                                        class="fas fa-map-marker-alt mr-sm-3 text-dark"></i>北部 <span id="northCount"
+                                        id="#north"></span></a>
+                                <a href="#middle" class="list-group-item list-group-item-action areaClick"><i
+                                        class="fas fa-map-marker-alt mr-sm-3 text-dark"></i>中部 <span id="middleCount"
+                                        id="#middle"></span></a>
+                                <a href="#south" class="list-group-item list-group-item-action areaClick"><i
+                                        class="fas fa-map-marker-alt mr-sm-3 text-dark"></i>南部 <span id="southCount"
+                                        id="#south"></span></a>
+                                <a href="#east" class="list-group-item list-group-item-action areaClick"><i
+                                        class="fas fa-map-marker-alt mr-sm-3 text-dark"></i>東部 <span id="eastCount"
+                                        id="#east"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                餐廳服務類型查詢
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-xl-12 btn-dec my-xl-2 col-lg-12">
+                                <a id="all" class="btn-radius active" data-num="0">全部類型</a>
+                                <a class="btn-radius" data-num="1">寵物餐廳</a>
+                                <a class="btn-radius" data-num="2">寵物友善餐廳</a>
+                                <a class="btn-radius" data-num="3">寵物樂園</a>
+                                <a class="btn-radius" data-num="4">寵物美容</a>
+                                <a class="btn-radius" data-num="5">寵物安親</a>
+                                <a class="btn-radius" data-num="6">浪浪中途</a>
+                                <a class="btn-radius" data-num="7">寵物雜貨</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                關鍵字查詢
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <div class="mt-xl-5 mt-lg-5">
+                                    <div class="input-group mb-3">
+                                        <input type="text" id="serch" class="form-control point-serch"
+                                            placeholder="店家搜尋" aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2" data-table="order-table">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary text-white serch-btn">GO</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-xl-3 col-lg-5 mt-xl-5 mt-lg-5">
+                <div class="col-xl-3 col-lg-5 mt-xl-5 mt-lg-5 d-none d-lg-block">
                     <div class="list-group">
                         <div href="#" class="list-group-item list-group-item-action bg-primary border-0 text-white h5"
                             id="point">
-                            <i class="fas fa-globe-asia mr-xl-3"></i>
+                            <i class="fas fa-globe-asia mr-md-3"></i>
                             地區分類
                         </div>
                         <a href="#north" class="list-group-item list-group-item-action areaClick"><i
-                                class="fas fa-map-marker-alt mr-xl-3 text-dark"></i>北部 <span id="northCount"
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>北部 <span id="northCount"
                                 id="#north"></span></a>
                         <a href="#middle" class="list-group-item list-group-item-action areaClick"><i
-                                class="fas fa-map-marker-alt mr-xl-3 text-dark"></i>中部 <span id="middleCount"
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>中部 <span id="middleCount"
                                 id="#middle"></span></a>
                         <a href="#south" class="list-group-item list-group-item-action areaClick"><i
-                                class="fas fa-map-marker-alt mr-xl-3 text-dark"></i>南部 <span id="southCount"
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>南部 <span id="southCount"
                                 id="#south"></span></a>
                         <a href="#east" class="list-group-item list-group-item-action areaClick"><i
-                                class="fas fa-map-marker-alt mr-xl-3 text-dark"></i>東部 <span id="eastCount"
+                                class="fas fa-map-marker-alt mr-md-3 text-dark"></i>東部 <span id="eastCount"
                                 id="#east"></span></a>
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-7">
                     <div class="row">
-                        <div class="col-xl-7 col-lg-10">
+                        <div class="col-md-12 d-none d-lg-block">
                             <div class="mt-xl-5 mt-lg-5">
                                 <div class="input-group mb-3">
                                     <input type="text" id="serch" class="form-control point-serch" placeholder="店家搜尋"
@@ -134,14 +239,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-lg-1 mt-xl-5 pt-xl-1 mt-lg-5 pt-lg-1">
-                            <a href="#" class="reset">
-                                <i class="fas fa-redo h4"></i>
-                            </a>
-                        </div>
-                        <div class="col-xl-12 btn-dec my-xl-2 col-lg-12">
+                        <div class="col-xl-12 btn-dec my-xl-2 col-lg-12 d-none d-lg-block">
                             <a id="all" class="btn-radius active" data-num="0">全部類型</a>
-                            <a class="btn-radius mb-lg-2" data-num="1">寵物餐廳</a>
+                            <a class="btn-radius" data-num="1">寵物餐廳</a>
                             <a class="btn-radius" data-num="2">寵物友善餐廳</a>
                             <a class="btn-radius" data-num="3">寵物樂園</a>
                             <a class="btn-radius" data-num="4">寵物美容</a>
@@ -156,7 +256,7 @@
             </div>
         </div>
         <div class="dismap map">
-            <div class="row mt-xl-7 mt-lg-7">
+            <div class="row mt-xl-7 mt-lg-7 mt-3">
                 <div class="col-xl-5 map-list col-lg-5">
                 </div>
                 <div class="col-xl-7 col-lg-7" style="height:576px">
@@ -165,24 +265,43 @@
             </div>
         </div>
     </div>
-    <div class="dispage">
+    <div class="dispage mt-md-8">
         <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center mt-xl-6">
+            <ul class="pagination justify-content-center mt-xl-6 mt-8">
             </ul>
         </nav>
     </div>
-    <div class="footer mt-xl-8 mt-lg-8">
-        <div class="bg-success text-center text-warning py-xl-3">
+    <!-- <div class="footer mt-md-8 mb-0">
+        <div class="bg-success text-center text-warning">
             <p class="mb-xl-0 pb-xl-1"><span class="year">&copy;</span>寵物友善餐廳查詢</p>
-            <p class="mb-xl-0">Made by Jelly</p>
+            <p class="mb-xl-0">Made by Jelly<p>
         </div>
-    </div>
+    </div> -->
+    <!-- <div class="bg-success">
+        <div class="container">
+            <ul class="list-inline list-unstyle p-5 mb-0">
+                <li class=" text-secondary">© Copright 2017 六角學院</li>
+                <li class=""><a href="＃">GitHub</a></li>
+                <li class=""><a href="＃">Facebook</a></li>
+                <li class=""><a href="＃">About</a></li>
+            </ul>
+        </div>
+    </div> -->
+        <div class="bg-success">
+            <div class="container">
+                <div class="mb-0 text-warning text-center mt-5">
+                    <p class="pt-2"><span class="year">&copy;</span>寵物友善餐廳查詢</p>
+                    <p class="list-inline-item">Made by Jelly</p>
+                </div>
+            </div>
+        </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="js/all.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABC2LrjCQkCGgKfrvRey2zfj5nD4BGjuE&callback=initMap"
         async defer></script>

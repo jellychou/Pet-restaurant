@@ -31,7 +31,7 @@ let activePage;
 let keyWord;
 let reset = document.querySelector('.reset');
 
-reset.addEventListener('click', point_Reset);
+// reset.addEventListener('click', point_Reset);
 serchBtn.addEventListener('click', point_Serch);
 
 $(document).ready(function () {
@@ -44,15 +44,16 @@ $(document).ready(function () {
         if ($('.map').hasClass('disblock')) {
             $('.map').removeClass('disblock').addClass('dismap');
         }
-    })
+    });
     //地圖式查詢
     $('.map-btn').click(function () {
+        pagination.innerHTML = '';
         $('.map').removeClass('dismap').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
         if ($('.point').hasClass('disblock')) {
             $('.point').removeClass('disblock').addClass('dispoint');
         }
-    })
+    });
 
     //用ajax撈API資料
     $.ajax({
@@ -125,10 +126,10 @@ $(document).ready(function () {
                     <div class="mt-md-3 border-style infoCard">
                         <div class="bg-warning">
                             <div class="row list"> 
-                                <div class="col-md-3 no-gutter">
-                                    <img class="w-100 h-100" src="${allResults[i].properties.Images}">
+                                <div class="col-md-4 no-gutter">
+                                    <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
                                 </div> 
-                                <div class="col-md-9 my-md-2 order-table">
+                                <div class="col-md-8 my-md-2 order-table">
                                     <h4>${allResults[i].properties.Name}</h4>
                                     <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Tel}</p>
@@ -139,7 +140,7 @@ $(document).ready(function () {
                                     <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Classification}</p>
                                 </div>
-                            </div> 
+                            </div>
                         </div>      
                     </div>`;
                 }
@@ -168,29 +169,17 @@ $(document).ready(function () {
             } else {
                 $(this).addClass('active');
             }
-
-            //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
-            list.innerHTML = '';
-            init();
-            selectArry = [];
-            $('.infoCard').hide();
-            infoCardshow = [];
-            $('.btn-radius.active').each(function () {
-                selectArry.push(Number(this.dataset.num));
-            });
-            categoryArr.forEach((val, index) => {
-                if (arrInArr(selectArry, val)) {
-                    $($('.infoCard')[index]).show();
-                    infoCardshow.push($('.infoCard')[index]);
-                }
-            });
-            listCount();
-            console.log(document.querySelectorAll('.page-num')[0].classList);
-            document.querySelectorAll('.page-num')[0].classList.add('active');
+            typeCount();
         });
 
         $('.infoCard').each(function () {
             infoCardshow.push(this);
+        });
+
+        $('#serch').on('keypress', (e) => {
+            if (e.keyCode === 13) {
+                point_Serch();
+            }
         });
 
 
@@ -214,9 +203,9 @@ $(document).ready(function () {
             markers.push(marker);
             marker.addListener('click', function () {
                 // map.setCenter(marker.getPosition());
-                mapList.innerHTML = ` <div class="card">
-                <img src="${allResults[i].properties.Images}"
-                    class="card-img-top w-100 object-fit" alt="...">
+                mapList.innerHTML = ` 
+                <div class="card d-none d-lg-block">
+                    <img src="${allResults[i].properties.Images}" class="card-img-top w-100 h-100 object-fit" alt="...">
                 <div class="card-body">
                     <h4 class="card-title">${allResults[i].properties.Name}</h4>
                     <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
@@ -228,7 +217,27 @@ $(document).ready(function () {
                             class="fas fa-paw text-secondary mr-md-3"></i>${allResults[i].properties.Classification}
                     </p>
                 </div>
-            </div> `;
+            </div> 
+            <div class="mt-md-3 mb-3 border-style infoCard d-block d-lg-none">
+                <div class="bg-warning">
+                    <div class="row list mt-sm-3 mt-md-0"> 
+                        <div class="col-md-4 no-gutter col-4">
+                            <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
+                        </div> 
+                        <div class="col-md-8 my-md-2 order-table col-8">
+                            <h4>${allResults[i].properties.Name}</h4>
+                            <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Tel}</p>
+                            <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Add}</p>
+                            <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Time}</p>
+                            <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Classification}</p>
+                        </div>
+                    </div> 
+                </div>      
+            </div>`;
             });
             marker.addListener('click', initBounce);
             function initBounce() {
@@ -302,25 +311,25 @@ function init() {
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
         <div class="mt-md-3 border-style infoCard" data-name="${allResults[i].properties.Name}" 
-        data-add="${allResults[i].properties.Add}" data-classification="${allResults[i].properties.Classification}">
-            <div class="bg-warnin">
-                <div class="row list">
-                    <div class="col-md-3 no-gutter">
-                        <img class="w-100 h-100" src="${allResults[i].properties.Images}">
+            data-add="${allResults[i].properties.Add}" data-classification="${allResults[i].properties.Classification}">
+                <div class="bg-warning">
+                    <div class="row list">
+                        <div class="col-md-4 no-gutter">
+                            <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
+                        </div> 
+                        <div class="col-md-8 my-md-2 order-table ml-5 ml-md-0">
+                            <h4 class="mt-3 mt-md-0">${allResults[i].properties.Name}</h4>
+                            <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Tel}</p>
+                            <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Add}</p>
+                            <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Time}</p>
+                            <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
+                            ${allResults[i].properties.Classification}</p>
+                        </div>
                     </div> 
-                    <div class="col-md-9 my-md-2 order-table">
-                        <h4>${allResults[i].properties.Name}</h4>
-                        <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Tel}</p>
-                        <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Add}</p>
-                        <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Time}</p>
-                        <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
-                        ${allResults[i].properties.Classification}</p>
-                    </div>
-                </div> 
-            </div>      
+                </div>      
         </div>`;
     };
 }
@@ -393,8 +402,9 @@ function preOrNext(go) {
 }
 
 function point_Serch(e) {
+    typeCount();
     let tempShow = [];
-    let none = []; 
+    let none = [];
     infoCardshow.forEach(function (val, index) {
         keyWord = pointSerch.value;
         let address = $(val).data('add');
@@ -418,9 +428,32 @@ function point_Serch(e) {
 
 };
 
-function point_Reset() {
+// function point_Reset() {
+//     list.innerHTML = '';
+//     pointSerch.value = '';
+//     init();
+//     selectArry = [];
+//     $('.infoCard').hide();
+//     infoCardshow = [];
+//     $('.btn-radius.active').each(function () {
+//         selectArry.push(Number(this.dataset.num));
+//     });
+//     categoryArr.forEach((val, index) => {
+//         if (arrInArr(selectArry, val)) {
+//             $($('.infoCard')[index]).show();
+//             infoCardshow.push($('.infoCard')[index]);
+//         }
+//     });
+//     listCount();
+//     console.log(document.querySelectorAll('.page-num')[0].classList);
+//     document.querySelectorAll('.page-num')[0].classList.add('active');
+// }
+
+function typeCount() {
+
+
+    //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
     list.innerHTML = '';
-    pointSerch.value = '';
     init();
     selectArry = [];
     $('.infoCard').hide();

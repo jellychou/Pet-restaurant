@@ -7,14 +7,27 @@
     .carousel-btn {
         position: absolute;
         z-index: 1;
-        left: 315px;
+        left: 353px;
         top: 100px;
-        @include media-breakpoint-up(lg){
-             position: absolute;
-             z-index: 1;
-             left: 260px;
-             top: 100px;
+        @include media-breakpoint-down(lg) {
+            position: absolute;
+            z-index: 1;
+            left: 265px;
+            top: 100px;
+          }
+        @include media-breakpoint-down(md) {
+          position: absolute;
+          z-index: 1;
+          left: 124px;
+          top: 100px;
         }
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            z-index: 1;
+            left: 76px;
+            top: 100px;
+          }
+        
         .btn-style {
             height: 150px;
             width: 150px;
@@ -41,6 +54,7 @@
     border: 2px solid $success;
     padding: 8px;
     margin-right: 2px;
+    margin-bottom: 10px;
     &:hover {
         color: gray;
         background-color: $primary-200;
@@ -68,4 +82,11 @@
 
 .disblock {
     display: block;
+}
+
+.mapstyle {
+    height: 576px;
+    @include media-breakpoint-down(sm) {
+         height: 400px;
+      }
 }
