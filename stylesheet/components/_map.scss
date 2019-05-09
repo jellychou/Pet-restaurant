@@ -25,3 +25,23 @@ body {
       display: inline;
   }
 }
+
+.map-height {
+    height: 576px;
+    @media screen and (min-width: 1200px) and (max-width: 1440px) {
+        height: 800px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 411px) {
+        height: 500px;
+    }
+}
+
+// .order-table {
+//     @media screen and (min-width: 320px) and (max-width: 411px) {
+//         height: 100px;
+//     }
+// }
+
+.phone-icon {
+    margin-right: 5px;
+}

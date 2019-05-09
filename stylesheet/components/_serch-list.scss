@@ -3,32 +3,20 @@
     .carousel-header {
         height: 500px;
         z-index: 0;
+        @media screen and (max-width: 768px) and (max-width: 1440px) {
+            height: 700px;
+            z-index: 0;
+            }
+        @media screen and (min-width: 320px) and (max-width: 414px) {
+            height: 450px;
+            z-index: 0;
+        } 
     }
-    .carousel-btn {
-        position: absolute;
-        z-index: 1;
-        left: 353px;
-        top: 100px;
-        @include media-breakpoint-down(lg) {
+        .btn-style-point {
             position: absolute;
             z-index: 1;
-            left: 265px;
-            top: 100px;
-          }
-        @include media-breakpoint-down(md) {
-          position: absolute;
-          z-index: 1;
-          left: 124px;
-          top: 100px;
-        }
-        @include media-breakpoint-down(sm) {
-            position: absolute;
-            z-index: 1;
-            left: 76px;
-            top: 100px;
-          }
-        
-        .btn-style {
+            top: 20%;
+            left: 25%;
             height: 150px;
             width: 150px;
             border-radius: 50%;
@@ -37,12 +25,65 @@
                 border: 3px solid #fff;
                 opacity: 1;
             }
+            @media screen and (min-width: 1200px) and (max-width: 1440px) {
+                top: 20%;
+                left: 25%;
+            }
+            @include media-breakpoint-down(sm) {
+                left: 14%;
+            }
+            @media screen and (min-width: 320px) and (max-width: 414px) {
+                height: 100px;
+                width: 90px;
+                border-radius: 0 0 50px 50px;
+                top: 0;
+                left: 10%;
+                transition: 2s;
+                &:hover {
+                    height: 200px;
+                }
+            }
+        }
+        .btn-style-map {
+            position: absolute;
+            z-index: 1;
+            top: 20%;
+            left: 60%;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            opacity: 0.8;
+            &:hover {
+                border: 3px solid #fff;
+                opacity: 1;
+            }
+            @media screen and (min-width: 1200px) and (max-width: 1440px) {
+                top: 20%;
+                left: 60%;
+            }
+            @include media-breakpoint-down(sm) {
+                left: 55%;
+            }
+            @media screen and (min-width: 320px) and (max-width: 414px) {
+                height: 100px;
+                width: 90px;
+                border-radius: 0 0 50px 50px;
+                top: 0;
+                left: 60%;
+                transition: 2s;
+                &:hover {
+                    height: 200px;
+                    writing-mode: vertical-lr;
+                }
+            }
         }
         .a-style {
             font-size: 25px;
             text-decoration: none;
+            @media screen and (min-width: 320px) and (max-width: 414px) {
+                font-size: 20px;
+            }
         }
-    }
 }
 .btn-dec a {
     text-decoration: none;
@@ -89,4 +130,10 @@
     @include media-breakpoint-down(sm) {
          height: 400px;
       }
+}
+
+.navbar-toggler-icon {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 10px;
+    }
 }

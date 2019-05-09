@@ -6,6 +6,12 @@
 .jumbotron-bg {
     background-image: url('https://images.unsplash.com/photo-1488390005333-385a7573bad6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
     min-height: 750px;
+    @media screen and (min-width: 414px) and (max-width: 530px) {
+        min-height: 547px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        min-height: 450px;
+    }
 }
 
 .bg-lighter {
@@ -15,6 +21,15 @@
 .nav-img {
     height: 600px;
     opacity: 0.3;
+    @media screen and (min-width: 414px) and (max-width: 568px) {
+       height: 650px;
+    }
+}
+
+.navbar {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        padding: 20px;
+    }
 }
 
 .bg-style {
@@ -32,6 +47,159 @@
 
 .object-fit {
     object-fit: cover;
+    height: 300px;
+    width: 370px;
+    @include media-breakpoint-down(sm) {
+        height: 200px;
+        width: 100%;
+    }
+    @media screen and (min-width: 736px) and (max-width: 991px) {
+        height: 230px;
+        width: 100%;
+    }
+    @media screen and (min-width: 640px) and (max-width: 736px) {
+        height: 180px;
+        width: 100%;
+    }
+    @media screen and (min-width: 412px) and (max-width: 640px) {
+        height: 100%;
+        width: 100%;
+    }
 }
 
+.homepage-phone {
+    @media screen and (min-width: 414px) and (max-width: 530px) {
+        font-size: 26px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 25px;
+    }
+}
 
+.lead {
+    @media screen and (min-width: 414px) and (max-width: 530px) {
+        font-size: 15px;
+    }
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 14px;
+    }
+}
+
+.head-bg {
+    padding: 30px;
+}
+
+.head-img {
+    height: 80px;
+    width: 80px;
+    @media screen and (min-width: 320px) and (max-width: 411px) {
+        height: 30px;
+        width: 30px; 
+        margin-top: 5px;
+    }
+}
+
+.title-height {
+    height: 45px;
+    @media screen and (min-width: 320px) and (max-width: 411px) {
+        height: 10px;
+        font-size: 23px;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    @media screen and (min-width: 414px) and (max-width: 568px) {
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+}
+
+.head {
+    @media screen and (min-width: 320px) and (max-width: 411px) {
+        font-size: 10px;
+    }
+    
+}
+
+.phone-page {
+    @media screen and (min-width: 414px) and (max-width: 823px) {
+        max-width: 450px;
+        // margin-left: 30px;
+    }
+    @media screen and (min-width: 640px) and (max-width: 736px) {
+        max-width: 305px;
+        margin-left: 0;
+        padding-left: 5px;
+        margin-top: 5px;
+    }
+    @media screen and (min-width: 568px) and (max-width: 640px) {
+        max-width: 328px;
+        // padding-left: 5px;
+    }
+}
+
+.phone-icon {
+    @media screen and (min-width: 412px) and (max-width: 568px) {
+        margin-bottom: 2px;
+    }
+}
+
+.phone-Navs {
+    @media screen and (min-width: 414px) and (max-width: 568px) {
+        padding-bottom: 20px;
+    }
+}
+
+.phone-fontsize16 {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 16px;
+    }
+}
+.phone-fontsize18{
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 18px;
+    }
+}
+
+.phone-fontsize24 {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        font-size: 24px;
+    }
+}
+
+.phone-nav {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        padding: 5px;
+    }
+}
+
+.card-img-overlay {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        padding: 6px;
+    }
+}
+
+.phone-top {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        margin-top: 16px;
+    } 
+}
+
+.mb {
+    @media screen and (min-width: 320px) and (max-width: 414px) {
+        margin-bottom: 3px;
+        margin-left: 13px;
+    } 
+}
+.top {
+    font-size: 50px;
+    position: fixed;
+    bottom: 180px;
+    right: 8px;
+    @media screen and (min-width: 1025px) and (max-width: 1440px) {
+        font-size: 80px;
+        position: fixed;
+        bottom: 100px;
+        right: 120px;
+    } 
+}

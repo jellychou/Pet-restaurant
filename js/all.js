@@ -26,10 +26,15 @@ let number_of_items = 0;
 let number_of_pages = 0;
 let textNode;
 let pagination = document.querySelector('.pagination');
+let select = document.querySelector('.select');
 let originalArr = [];
+let pageArr = [];
 let activePage;
 let keyWord;
 let reset = document.querySelector('.reset');
+let totalPage = document.querySelector('.total-page');
+let infowindow;
+let content = document.getElementById('content');
 
 // reset.addEventListener('click', point_Reset);
 serchBtn.addEventListener('click', point_Serch);
@@ -40,7 +45,9 @@ $(document).ready(function () {
         $('.point').removeClass('dispoint').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
         listCount();
-        document.querySelectorAll('.page-num')[0].classList.add('active');
+        if (window.innerWidth > 411) {
+            document.querySelectorAll('.page-num')[0].classList.add('active');
+        }
         if ($('.map').hasClass('disblock')) {
             $('.map').removeClass('disblock').addClass('dismap');
         }
@@ -188,6 +195,8 @@ $(document).ready(function () {
             scaledSize: new google.maps.Size(65, 65),
         };
 
+        infowindow = setinfowindow();
+
         for (let i = 0; i < allResults.length; i++) {
             let str = {};
             let place = {};
@@ -201,55 +210,78 @@ $(document).ready(function () {
             str.animation = google.maps.Animation.DROP;
             let marker = new google.maps.Marker(str);
             markers.push(marker);
-            marker.addListener('click', function () {
-                // map.setCenter(marker.getPosition());
+
+            if (window.innerWidth > 411) {
+                marker.addListener('click', function () {
                 mapList.innerHTML = ` 
-                <div class="card d-none d-lg-block">
-                    <img src="${allResults[i].properties.Images}" class="card-img-top w-100 h-100 object-fit" alt="...">
-                <div class="card-body">
-                    <h4 class="card-title">${allResults[i].properties.Name}</h4>
-                    <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
-                    </p>
-                    <p class="card-text"><i
-                            class="fas fa-map-marker-alt text-secondary mr-md-3"></i>${allResults[i].properties.Add}</p>
-                    <p class="card-text"><i class="fas fa-clock text-secondary mr-md-3"></i>${allResults[i].properties.Time}</p>
-                    <p class="card-text"><i
-                            class="fas fa-paw text-secondary mr-md-3"></i>${allResults[i].properties.Classification}
-                    </p>
-                </div>
-            </div> 
-            <div class="mt-md-3 mb-3 border-style infoCard d-block d-lg-none">
-                <div class="bg-warning">
-                    <div class="row list mt-sm-3 mt-md-0"> 
-                        <div class="col-md-4 no-gutter col-4">
-                            <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
-                        </div> 
-                        <div class="col-md-8 my-md-2 order-table col-8">
-                            <h4>${allResults[i].properties.Name}</h4>
-                            <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Tel}</p>
-                            <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Add}</p>
-                            <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Time}</p>
-                            <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
-                            ${allResults[i].properties.Classification}</p>
+                    <div class="card d-none d-lg-block">
+                        <img src="${allResults[i].properties.Images}" class="card-img-topobject-fit h-100 w-100" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">${allResults[i].properties.Name}</h4>
+                            <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
+                            </p>
+                            <p class="card-text"><i
+                                    class="fas fa-map-marker-alt text-secondary mr-md-3"></i>${allResults[i].properties.Add}</p>
+                            <p class="card-text"><i class="fas fa-clock text-secondary mr-md-3"></i>${allResults[i].properties.Time}</p>
+                            <p class="card-text"><i
+                                    class="fas fa-paw text-secondary mr-md-3"></i>${allResults[i].properties.Classification}
+                            </p>
                         </div>
                     </div> 
-                </div>      
-            </div>`;
-            });
-            marker.addListener('click', initBounce);
-            function initBounce() {
-                markers.forEach((val) => {
-                    val.setAnimation(null);
+                <div class="mt-md-3 mb-3 border-style infoCard d-block d-lg-none">
+                    <div class="bg-warning">
+                        <div class="row list mt-sm-3 mt-md-0"> 
+                            <div class="col-md-4 no-gutter col-4 col-sm-5">
+                                <img class="object-fit h-100" src="${allResults[i].properties.Images}">
+                            </div> 
+                            <div class="col-md-8 my-md-2 order-table col-8 col-sm-7 phone-page">
+                                <h4>${allResults[i].properties.Name}</h4>
+                                <p class="mb-sm-1 phone-icon"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
+                                ${allResults[i].properties.Tel}</p>
+                                <p class="mb-sm-1 phone-icon"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
+                                ${allResults[i].properties.Add}</p>
+                                <p class="mb-sm-1 phone-icon"><i class="fas fa-clock text-secondary mr-md-3"></i>
+                                ${allResults[i].properties.Time}</p>
+                                <p class="mb-sm-1 phone-icon"><i class="fas fa-paw text-secondary mr-md-3"></i>
+                                ${allResults[i].properties.Classification}</p>
+                            </div>
+                        </div> 
+                    </div>      
+                </div>`;
                 });
-                marker.setAnimation(google.maps.Animation.BOUNCE);
+                marker.addListener('click', initBounce);
+                function initBounce() {
+                    markers.forEach((val) => {
+                        val.setAnimation(null);
+                    });
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            } else {
+                marker.addListener('click', function () {
+                    let contentString = `
+                    <div id="content-style">
+                        <div id="content">
+                            <div id="siteNotice"></div>
+                            <h5 id="firstHeading" class="firstHeading">${allResults[i].properties.Name}</h5>
+                            <div id="bodyContent">
+                                <span><i class="fas fa-map-marker-alt phone-icon"></i>${allResults[i].properties.Add}</span></br>
+                                <span><i class="fas fa-phone-square phone-icon"></i>${allResults[i].properties.Tel}</span></br>
+                                <span><i class="fas fa-clock phone-icon"></i>${allResults[i].properties.Time}</span></br>
+                                <span><i class="fas fa-paw phone-icon"></i>${allResults[i].properties.Classification}</span>
+                            </div>
+                        </div>
+                    </div>`;
+                    infowindow = createinfowindow(infowindow, contentString);
+                    infowindow.open(map, this);
+                });
             }
         };
-
-
-
+        $('.top').click(function (e){
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 500
+            }, 1000);
+        })
 
     }).fail(function (err) {
         console.log(err)
@@ -263,8 +295,9 @@ year.innerHTML = `&copy; ${thisYear}`;
 //map
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 23.6268743, lng: 121.0105996 },
-        zoom: 7.8,
+        center: { lat: 23.6468743, lng: 121.0105996 },
+        zoom: 7.4,
+        disableDefaultUI: true,
         styles: [
             {
                 "stylers": [
@@ -307,10 +340,21 @@ function arrInArr(ary, target) {
     return true;
 }
 
+
+// var contentString = '<h1>大家好我是資訊視窗</h1>';
+// var infowindow = new google.maps.InfoWindow({
+//     content: contentString,
+//     position: position,
+//     maxWidth: 200,
+//     pixelOffset: new google.maps.Size(100, -20)
+// });
+// infowindow.open(map, marker);
+
+
 function init() {
     for (let i = 0; i < allLen; i++) {
         list.innerHTML += `
-        <div class="mt-md-3 border-style infoCard" data-name="${allResults[i].properties.Name}" 
+        <div class="mt-md-3 border-style infoCard" data-name="${allResults[i].properties.Name}"
             data-add="${allResults[i].properties.Add}" data-classification="${allResults[i].properties.Classification}">
                 <div class="bg-warning">
                     <div class="row list">
@@ -339,23 +383,46 @@ function listCount() {
     number_of_items = infoCardshow.length;
     number_of_pages = Math.ceil(number_of_items / show_per_page);
     textNode = '';
-    for (let i = 1; i < number_of_pages + 1; i++) {
-        textNode += `
-        <li class="page-item page-num" onclick="changePage(${i - 1})">
-        <a class="page-link" href="#all">${i}</a>
-        </li>`;
-        pagination.innerHTML = `
-     <li class="page-item">
-         <a class="page-link" href="#all" aria-label="Previous" onclick="preOrNext('pre')">
-             <span aria-hidden="true">&laquo;</span>
-         </a>
-     </li>
-     ${textNode}
-     <li class="page-item">
-         <a class="page-link" href="#all" aria-label="Next" onclick="preOrNext('next')">
-             <span aria-hidden="true">&raquo;</span>
-         </a>
-     </li> `;
+    if (window.innerWidth > 411) {
+        for (let i = 1; i < number_of_pages + 1; i++) {
+            textNode += `
+                <li class="page-item page-num" onclick="changePage(${i - 1})">
+                <a class="page-link" href="#all">${i}</a>
+                </li>`;
+            pagination.innerHTML = `
+                <li class="page-item">
+                    <a class="page-link" href="#all" aria-label="Previous" onclick="preOrNext('pre')">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                ${textNode}
+                <li class="page-item">
+                    <a class="page-link" href="#all" aria-label="Next" onclick="preOrNext('next')">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li> `;
+        }
+    } else {
+        for (let i = 1; i < number_of_pages + 1; i++) {
+            pagination.innerHTML = `
+        <li class="page-item">
+            <a class="page-link" href="#all" aria-label="Previous" onclick="preOrNext('pre')">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <p class="page-link">
+                <span aria-hidden="true" class="page">${1}</span>
+            </p>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#all" aria-label="Next" onclick="preOrNext('next')">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li> `;
+            totalPage.innerHTML = `
+        <p class="d-flex text-info justify-content-center">共${number_of_pages}頁 / ${number_of_items}筆資料</p>`;
+        }
     }
     for (let i = 0; i < infoCardshow.length; i++) {
         $(infoCardshow[i]).hide();
@@ -364,42 +431,69 @@ function listCount() {
     for (let i = 0; i < show_per_page; i++) {
         $(originalArr.slice(0, show_per_page)[i]).show();
     }
-
 }
 
 
+
 function changePage(page_num) {
-    for (let i = 0; i < number_of_pages; i++) {
-        document.querySelectorAll('.page-num')[i].classList.remove('active');
-    }
-    document.querySelectorAll('.page-num')[page_num].classList.add('active');
+    if (window.innerWidth > 411) {
+        for (let i = 0; i < number_of_pages; i++) {
+            document.querySelectorAll('.page-num')[i].classList.remove('active');
+        }
+        document.querySelectorAll('.page-num')[page_num].classList.add('active');
+        let start_form = page_num * show_per_page;
+        let end_on = start_form + show_per_page;
+        for (let i = 0; i < infoCardshow.length; i++) {
+            $(infoCardshow[i]).hide();
+        }
 
-    let start_form = page_num * show_per_page;
-    let end_on = start_form + show_per_page;
+        for (let i = 0; i < show_per_page; i++) {
+            $(originalArr.slice(start_form, end_on)).show();
 
-    for (let i = 0; i < infoCardshow.length; i++) {
-        $(infoCardshow[i]).hide();
-    }
+        }
+    } else {
+        let start_form = (page_num - 1) * show_per_page;
+        let end_on = start_form + show_per_page;
+        for (let i = 0; i < infoCardshow.length; i++) {
+            $(infoCardshow[i]).hide();
+        }
 
-    for (let i = 0; i < show_per_page; i++) {
-        $(originalArr.slice(start_form, end_on)).show();
+        for (let i = 0; i < show_per_page; i++) {
+            $(originalArr.slice(start_form, end_on)).show();
 
+        }
     }
 }
 
 function preOrNext(go) {
-    for (let i = 0; i < number_of_pages; i++) {
-        if (document.querySelectorAll('.page-num')[i].classList.contains('active')) {
-            activePage = document.querySelectorAll('.page-num')[i].children[0];
+    if (window.innerWidth > 411) {
+        for (let i = 0; i < number_of_pages; i++) {
+            if (document.querySelectorAll('.page-num')[i].classList.contains('active')) {
+                activePage = document.querySelectorAll('.page-num')[i].children[0];
+            }
+        }
+        let now = parseInt(activePage.textContent) - 1
+        if (go == 'pre' && now > 0) {
+            changePage(now - 1)
+        } else if (go == 'next' && now < number_of_pages - 1) {
+            changePage(now + 1)
+        }
+    } else {
+        let now = parseInt(document.querySelector('.page').textContent);
+        if (go == 'pre') {
+            if (now !== 1) {
+                document.querySelector('.page').textContent = Number(now - 1);
+                changePage(now - 1)
+            }
+        } else if (go == 'next') {
+            if (now < number_of_pages) {
+                document.querySelector('.page').textContent = Number(now + 1);
+                changePage(now + 1)
+            }
         }
     }
-    let now = parseInt(activePage.textContent) - 1
-    if (go == 'pre' && now > 0) {
-        changePage(now - 1)
-    } else if (go == 'next' && now < number_of_pages - 1) {
-        changePage(now + 1)
-    }
 }
+
 
 function point_Serch(e) {
     typeCount();
@@ -428,30 +522,7 @@ function point_Serch(e) {
 
 };
 
-// function point_Reset() {
-//     list.innerHTML = '';
-//     pointSerch.value = '';
-//     init();
-//     selectArry = [];
-//     $('.infoCard').hide();
-//     infoCardshow = [];
-//     $('.btn-radius.active').each(function () {
-//         selectArry.push(Number(this.dataset.num));
-//     });
-//     categoryArr.forEach((val, index) => {
-//         if (arrInArr(selectArry, val)) {
-//             $($('.infoCard')[index]).show();
-//             infoCardshow.push($('.infoCard')[index]);
-//         }
-//     });
-//     listCount();
-//     console.log(document.querySelectorAll('.page-num')[0].classList);
-//     document.querySelectorAll('.page-num')[0].classList.add('active');
-// }
-
 function typeCount() {
-
-
     //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
     list.innerHTML = '';
     init();
@@ -468,6 +539,22 @@ function typeCount() {
         }
     });
     listCount();
-    console.log(document.querySelectorAll('.page-num')[0].classList);
-    document.querySelectorAll('.page-num')[0].classList.add('active');
+    if (window.innerWidth > 411) {
+        console.log(document.querySelectorAll('.page-num')[0].classList);
+        document.querySelectorAll('.page-num')[0].classList.add('active');
+    }
+}
+
+function setinfowindow()
+{
+    var infowindow = new google.maps.InfoWindow();
+    return infowindow;
+}
+    
+function createinfowindow(infowindow, content)
+{   
+    infowindow.close();
+    infowindow = new google.maps.InfoWindow({content: content});
+    infowindow.setOptions({maxWidth: 300});
+    return infowindow;
 }
