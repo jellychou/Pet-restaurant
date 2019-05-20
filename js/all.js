@@ -64,7 +64,7 @@ $(document).ready(function () {
 
     //用ajax撈API資料
     $.ajax({
-        url: 'http://localhost:3000/posts',
+        url: '/JSON/db.json',
         method: 'get',
         dataType: 'json',
         data: {}
@@ -340,15 +340,6 @@ function arrInArr(ary, target) {
     return true;
 }
 
-
-// var contentString = '<h1>大家好我是資訊視窗</h1>';
-// var infowindow = new google.maps.InfoWindow({
-//     content: contentString,
-//     position: position,
-//     maxWidth: 200,
-//     pixelOffset: new google.maps.Size(100, -20)
-// });
-// infowindow.open(map, marker);
 
 
 function init() {
