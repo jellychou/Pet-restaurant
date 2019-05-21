@@ -64,7 +64,7 @@ $(document).ready(function () {
 
     //用ajax撈API資料
     $.ajax({
-        url: '/JSON/db.json',
+        url: 'JSON/db.json',
         method: 'get',
         dataType: 'json',
         data: {}
