@@ -191,7 +191,7 @@ $(document).ready(function () {
 
 
         let image = {
-            url: '/images/point-icon.png',
+            url: 'images/point-icon.png',
             scaledSize: new google.maps.Size(65, 65),
         };
 
