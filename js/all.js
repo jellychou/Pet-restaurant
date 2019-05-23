@@ -35,10 +35,11 @@ let reset = document.querySelector('.reset');
 let totalPage = document.querySelector('.total-page');
 let infowindow;
 let content = document.getElementById('content');
+let serchLg = document.querySelector('.point-serch-lg');
+let btnLg = document.querySelector('.serch-btn-lg')
 
-// reset.addEventListener('click', point_Reset);
 serchBtn.addEventListener('click', point_Serch);
-
+btnLg.addEventListener('click',point_Serchlg);
 $(document).ready(function () {
     //關鍵字查詢
     $('.point-btn').click(function () {
@@ -164,6 +165,7 @@ $(document).ready(function () {
             }
         });
 
+
         //點選分類btn(btn-radius)新增刪除class        
         $('.btn-radius').on('click', function (e) {
             pagination.innerHTML = '';
@@ -190,7 +192,11 @@ $(document).ready(function () {
                 point_Serch();
             }
         });
-
+        $('#serchlg').on('keypress', (e) => {
+            if (e.keyCode === 13) {
+                point_Serchlg();
+            }
+        });
 
         let image = {
             url: 'images/point-icon.png',
@@ -488,7 +494,9 @@ function preOrNext(go) {
 }
 
 
+//input 關鍵字查詢
 function point_Serch(e) {
+    console.log('123');
     typeCount();
     let tempShow = [];
     let none = [];
@@ -511,12 +519,37 @@ function point_Serch(e) {
     infoCardshow = tempShow;
     pagination.innerHTML = '';
     listCount();
-    // document.querySelectorAll('.page-num')[0].classList.add('active');
-
 };
 
+//input-lg 關鍵字查詢
+function point_Serchlg(e) {
+    console.log('123');
+    typeCount();
+    let tempShow = [];
+    let none = [];
+    infoCardshow.forEach(function (val, index) {
+        keyWord = serchLg.value;
+        let address = $(val).data('add');
+        let classification = $(val).data('classification');
+        let name = $(val).data('name');
+        if (address.indexOf(keyWord) !== -1 || classification.indexOf(keyWord) !== -1 || name.indexOf(keyWord) !== -1) {
+            $(val).show();
+            tempShow.push(val);
+        } else {
+            $(val).hide();
+            none.push(val);
+            if (none.length == infoCardshow.length) {
+                list.innerHTML = '查無此關鍵字';
+            }
+        }
+    });
+    infoCardshow = tempShow;
+    pagination.innerHTML = '';
+    listCount();
+};
+
+//先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
 function typeCount() {
-    //先把全部隱藏display-none,在比對btn資料,符合的就顯示display-block,並執行分頁
     list.innerHTML = '';
     init();
     selectArry = [];
@@ -551,3 +584,4 @@ function createinfowindow(infowindow, content)
     infowindow.setOptions({maxWidth: 300});
     return infowindow;
 }
+
