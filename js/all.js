@@ -55,6 +55,7 @@ $(document).ready(function () {
     //地圖式查詢
     $('.map-btn').click(function () {
         pagination.innerHTML = '';
+        totalPage.innerHTML = '';
         $('.map').removeClass('dismap').addClass('disblock');
         $('.dispage').removeClass('dispage').addClass('disblock');
         if ($('.point').hasClass('disblock')) {
@@ -125,7 +126,6 @@ $(document).ready(function () {
             $('#all').removeClass('active');
             $('.btn-radius').removeClass('active');
             let el = e.target.textContent;
-            console.log(el);
             list.innerHTML = '';
             for (let i = 0; i < allLen; i++) {
                 if (el.indexOf(allZones[i]) !== -1) {
@@ -137,14 +137,14 @@ $(document).ready(function () {
                                     <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
                                 </div> 
                                 <div class="col-md-8 my-md-2 order-table">
-                                    <h4>${allResults[i].properties.Name}</h4>
-                                    <p class="mb-md-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
+                                    <h4 class="ml-4 mt-1 ml-md-0 mt-md-0">${allResults[i].properties.Name}</h4>
+                                    <p class="mb-md-1 ml-4 ml-md-0"><i class="fas fa-phone-square text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Tel}</p>
-                                    <p class="mb-md-1"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
+                                    <p class="mb-md-1 ml-4 ml-md-0"><i class="fas fa-map-marker-alt text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Add}</p>
-                                    <p class="mb-md-1"><i class="fas fa-clock text-secondary mr-md-3"></i>
+                                    <p class="mb-md-1 ml-4 ml-md-0"><i class="fas fa-clock text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Time}</p>
-                                    <p class="mb-md-1"><i class="fas fa-paw text-secondary mr-md-3"></i>
+                                    <p class="mb-md-1 ml-4 ml-md-0"><i class="fas fa-paw text-secondary mr-md-3"></i>
                                     ${allResults[i].properties.Classification}</p>
                                 </div>
                             </div>
@@ -158,8 +158,10 @@ $(document).ready(function () {
                 infoCardshow.push(this);
             })
             listCount();
-            console.log(document.querySelectorAll('.page-num')[0].classList);
-            document.querySelectorAll('.page-num')[0].classList.add('active');
+            if (window.innerWidth > 411 ) {
+                console.log(document.querySelectorAll('.page-num')[0].classList);
+                document.querySelectorAll('.page-num')[0].classList.add('active');
+            }
         });
 
         //點選分類btn(btn-radius)新增刪除class        
