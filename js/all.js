@@ -223,15 +223,15 @@ $(document).ready(function () {
                 marker.addListener('click', function () {
                 mapList.innerHTML = ` 
                     <div class="card d-none d-lg-block">
-                        <img src="${allResults[i].properties.Images}" class="card-img-topobject-fit h-100 w-100 bg-cover" alt="...">
+                        <img src="${allResults[i].properties.Images}" class="card-img-top object-fit w-100 bg-cover" alt="..." style="height:350px;>
                         <div class="card-body">
-                            <h4 class="card-title">${allResults[i].properties.Name}</h4>
-                            <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
+                            <h3 class="card-title ml-3 mt-1">${allResults[i].properties.Name}</h3>
+                            <p class="card-text ml-3 mb-1"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
                             </p>
-                            <p class="card-text"><i
+                            <p class="card-text ml-3 mb-1"><i
                                     class="fas fa-map-marker-alt text-secondary mr-md-3"></i>${allResults[i].properties.Add}</p>
-                            <p class="card-text"><i class="fas fa-clock text-secondary mr-md-3"></i>${allResults[i].properties.Time}</p>
-                            <p class="card-text"><i
+                            <p class="card-text ml-3 mb-1"><i class="fas fa-clock text-secondary mr-md-3"></i>${allResults[i].properties.Time}</p>
+                            <p class="card-text ml-3 mb-1"><i
                                     class="fas fa-paw text-secondary mr-md-3"></i>${allResults[i].properties.Classification}
                             </p>
                         </div>
