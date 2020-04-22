@@ -135,7 +135,7 @@ $(document).ready(function () {
                         <div class="bg-warning">
                             <div class="row list"> 
                                 <div class="col-md-4 no-gutter">
-                                    <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
+                                    <img class="w-100 object-fit bg-cover" style="height:250px;" src="${allResults[i].properties.Images}">
                                 </div> 
                                 <div class="col-md-8 my-md-2 order-table">
                                     <h4 class="ml-4 mt-1 ml-md-0 mt-md-0">${allResults[i].properties.Name}</h4>
@@ -223,7 +223,7 @@ $(document).ready(function () {
                 marker.addListener('click', function () {
                 mapList.innerHTML = ` 
                     <div class="card d-none d-lg-block">
-                        <img src="${allResults[i].properties.Images}" class="card-img-topobject-fit h-100 w-100" alt="...">
+                        <img src="${allResults[i].properties.Images}" class="card-img-topobject-fit h-100 w-100 bg-cover" alt="...">
                         <div class="card-body">
                             <h4 class="card-title">${allResults[i].properties.Name}</h4>
                             <p class="card-text"><i class="fas fa-phone-square text-secondary mr-md-3"></i>${allResults[i].properties.Tel}
@@ -240,7 +240,7 @@ $(document).ready(function () {
                     <div class="bg-warning">
                         <div class="row list mt-sm-3 mt-md-0"> 
                             <div class="col-md-4 no-gutter col-4 col-sm-5">
-                                <img class="object-fit h-100" src="${allResults[i].properties.Images}">
+                                <img class="object-fit bg-cover" style="height:250px;" src="${allResults[i].properties.Images}">
                             </div> 
                             <div class="col-md-8 my-md-2 order-table col-8 col-sm-7 phone-page">
                                 <h4>${allResults[i].properties.Name}</h4>
@@ -358,7 +358,7 @@ function init() {
                 <div class="bg-warning">
                     <div class="row list">
                         <div class="col-md-4 no-gutter">
-                            <img class="w-100 h-100 object-fit" src="${allResults[i].properties.Images}">
+                            <img class="w-100 object-fit bg-cover" style="height:250px;" src="${allResults[i].properties.Images}">
                         </div> 
                         <div class="col-md-8 my-md-2 order-table ml-5 ml-md-0">
                             <h4 class="mt-3 mt-md-0">${allResults[i].properties.Name}</h4>
